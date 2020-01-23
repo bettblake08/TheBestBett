@@ -9,7 +9,7 @@ export default () => (
     <div className="landing-page__info">
       <div className="info__intro">
         <h3>Hi, I'm</h3>
-        <h1>Brian Kipkirui Bett</h1>
+        <h1>Brian K. Bett</h1>
       </div>
 
       <div className="info__job">
