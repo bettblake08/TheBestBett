@@ -1,16 +1,10 @@
 import React from "react";
 import ContactSection from "../contactSection";
-import image from "../../../assets/images/landing-page.jpg";
+import socials from "../../../utilities/social";
 
 const GithubSection = ({ index }) => {
   return (
-    <ContactSection
-      title="LinkedIn"
-      handle="Brian Bett"
-      icon="linkedin"
-      index={index}
-      image={image}
-    >
+    <ContactSection {...socials.linkedin} index={index}>
       <p>Test description</p>
     </ContactSection>
   );

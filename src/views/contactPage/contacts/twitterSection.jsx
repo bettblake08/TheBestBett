@@ -1,16 +1,10 @@
 import React from "react";
 import ContactSection from "../contactSection";
-import image from "../../../assets/images/landing-page.jpg";
+import socials from "../../../utilities/social";
 
 const GithubSection = ({ index }) => {
   return (
-    <ContactSection
-        title="Twitter"
-        handle="@bettblake08"
-        icon="twitter"
-        index={index}
-        image={image}
-    >
+    <ContactSection {...socials.twitter} index={index}>
       <p>Test description</p>
     </ContactSection>
   );

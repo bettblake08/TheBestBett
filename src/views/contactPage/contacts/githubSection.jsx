@@ -1,19 +1,11 @@
 import React from "react";
 import ContactSection from "../contactSection";
-import image from "../../../assets/images/landing-page.jpg";
+import socials from "../../../utilities/social";
 
-const GithubSection = ({ index }) => {
+export default ({ index }) => {
   return (
-    <ContactSection
-      title="GitHub"
-      handle="@bettblake08"
-      icon="github"
-      index={index}
-      image={image}
-    >
+    <ContactSection {...socials.github} index={index}>
       <p>Test description</p>
     </ContactSection>
   );
 };
-
-export default GithubSection;

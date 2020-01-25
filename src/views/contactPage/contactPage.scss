@@ -87,7 +87,11 @@ $color-primary-dark: #000c1e;
 
   &__fade {
     box-shadow: $box-shadow-light-inset;
-    background-image: radial-gradient(circle at top right, transparent, $color-primary-dark);
+    background-image: radial-gradient(
+      circle at top right,
+      transparent,
+      $color-primary-dark
+    );
     width: 100%;
     height: 100%;
     position: absolute;
@@ -149,7 +153,19 @@ $color-primary-dark: #000c1e;
     }
   }
 
-  &--selected i {
+  &--selected &__icon i {
     transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  &__button {
+    float: left;
+    position: absolute;
+    bottom: 10rem;
+    width: 5rem;
+    @include transition-quick;
+  }
+
+  &--selected &__button {
+    width: 60%;
   }
 }

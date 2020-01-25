@@ -1,11 +1,12 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
+import socials from "../../utilities/social";
 import Logo from "../../assets/images/thebestbett-1.png";
 import LogoDark from "../../assets/images/thebestbett-black-1.png";
 
 import "./header.scss";
-import { motion } from "framer-motion";
 
 
 const headerStyleConfig = {
@@ -46,13 +47,10 @@ const Header = () => {
         <img src={style.isLogoDark ? LogoDark : Logo} alt="TheBestBett logo" />
       </div>
       <div className={`header__socials${style.isSocialDark ? "--dark" : ""}`}>
-        <SocialLink
-          icon="facebook"
-          url="https://www.facebook.com/bett.blake.bryan"
-        />
-        <SocialLink icon="twitter" url="https://twitter.com/thebest_bett" />
-        <SocialLink icon="linkedin" url="https://linkedin.com/in/bettbrian08" />
-        <SocialLink icon="github" url="https://github.com/bettblake08" />
+        <SocialLink {...socials.facebook} />
+        <SocialLink {...socials.twitter} />
+        <SocialLink {...socials.linkedin} />
+        <SocialLink {...socials.github} />
       </div>
     </div>
   );
