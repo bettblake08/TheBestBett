@@ -1,11 +1,11 @@
 import React from 'react';
-import { motion } from "framer-motion";
 import mainSliderConfig from "../../utilities/mainPageSlider";
+import SlidingPage from "../../components/slidingPage/slidingPage";
 
 import "./landingPage.scss";
 
 export default () => (
-  <motion.div {...mainSliderConfig} >
+  <SlidingPage {...mainSliderConfig} >
     <div className="landing-page__info">
       <div className="info__intro">
         <h3>Hi, I'm</h3>
@@ -17,5 +17,5 @@ export default () => (
         <span>Software Engineer</span>
       </div>
     </div>
-  </motion.div>
+  </SlidingPage>
 );

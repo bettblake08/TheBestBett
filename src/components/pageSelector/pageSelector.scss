@@ -22,10 +22,10 @@
       border-radius: 50%;
       width: 100%;
       height: 100%;
-      border: solid 0.1rem $color-primary;
+      border: solid 0.1rem $color-primary-white;
       position: absolute;
       z-index: 50;
-      color: $color-primary;
+      color: $color-primary-white;
       line-height: 5rem;
       text-align: center;
       @include transition-quick();
@@ -60,6 +60,7 @@
     &:hover &__icon {
       background-color: $color-primary;
       color: $color-primary-white;
+      border: solid 0.1rem $color-primary;
     }
   }
 }
