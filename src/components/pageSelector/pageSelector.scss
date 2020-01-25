@@ -12,11 +12,40 @@
   justify-content: center;
 
   &__option {
-    position: relative;
-    width: 5rem;
-    height: 5rem;
-    margin: 1.5rem 0;
-    @include transition-quick();
+    &,
+    &--selected {
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      margin: 1.5rem 0;
+      @include transition-quick();
+
+      label {
+        font-family: $font-primary;
+        color: $color-primary;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+        line-height: 5rem;
+        overflow: hidden;
+        font-size: 2rem;
+        position: absolute;
+        z-index: 0;
+        visibility: hidden;
+        padding-left: 6rem;
+        @include transition-quick();
+      }
+
+      &:hover {
+        label {
+          display: block;
+          width: 20rem;
+          background-color: $color-primary-white;
+          padding-left: 6rem;
+          visibility: visible;
+        }
+      }
+    }
 
     &__icon {
       border-radius: 50%;
@@ -31,36 +60,22 @@
       @include transition-quick();
     }
 
-    label {
-      font-family: $font-primary;
-      color: $color-primary;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 2.5rem;
-      line-height: 5rem;
-      overflow: hidden;
-      font-size: 2rem;
-      position: absolute;
-      z-index: 0;
-      visibility: hidden;
-      padding-left: 6rem;
-      @include transition-quick();
-    }
-
-    &:hover {
-      label {
-        display: block;
-        width: 20rem;
-        background-color: $color-primary-white;
-        padding-left: 6rem;
-        visibility: visible;
-      }
-    }
-
-    &:hover &__icon {
+    &:hover &__icon,
+    &--selected &__icon {
       background-color: $color-primary;
       color: $color-primary-white;
       border: solid 0.1rem $color-primary;
     }
+  }
+
+  &--dark &__option {
+    &__icon {
+      color: $color-primary;
+      border: solid 0.1rem $color-primary;
+    }
+  }
+
+  &--dark &__option--selected &__option__icon {
+    color: $color-primary-white;
   }
 }

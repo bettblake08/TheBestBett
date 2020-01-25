@@ -58,6 +58,7 @@ class WorkPage extends Component {
             {this.renderPreview(store.selectedWork)}
           </div>
           <div className="work-page__gallery">
+            <div className="work-page__gallery__fade" />
             <div className="work-page__gallery__view">
               <WorkCollection title="Projects" list={store.projects} />
               <WorkCollection title="Projects" list={store.projects} />

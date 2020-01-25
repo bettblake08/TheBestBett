@@ -2,43 +2,54 @@
 @import "../../assets/scss/abstract/mixins";
 
 .header {
-    position: absolute;
-    z-index: 500;
-    width: 100%;
-    padding: 2rem 10%;
+  position: absolute;
+  z-index: 500;
+  width: 100%;
+  padding: 2rem 10%;
 
-    &__logo {
-        width: auto;
+  &__logo {
+    width: auto;
+    height: 4rem;
+    float: left;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__socials {
+    &,
+    &--dark {
+      float: right;
+      display: flex;
+      justify-content: space-between;
+      width: 25rem;
+
+      a {
+        width: 4rem;
         height: 4rem;
-        float: left;
+        line-height: 4rem;
+        text-align: center;
+        text-decoration: none;
+        color: $color-primary-white;
+        border-radius: 50%;
+        border: solid 1px transparent;
+        @include transition-quick;
 
-        img {
-            height: 100%;
+        &:hover {
+          color: $color-primary;
+          scale: 1.5;
         }
+      }
     }
 
-    &__socials {
-        float: right;
-        display: flex;
-        justify-content: space-between;
-        width: 25rem;
-        
-        a {
-            width: 4rem;
-            height: 4rem;
-            line-height: 4rem;
-            text-align: center;
-            text-decoration: none;
-            color: $color-primary-white;
-            border-radius: 50%;
-            border: solid 1px transparent;
-            @include transition-quick;
-
-            &:hover {
-                color: $color-primary;
-                border-color: $color-primary;
-            }
+    &--dark {
+      a {
+        color: $color-primary;
+        &:hover {
+          scale: 1.5;
         }
+      }
     }
-
+  }
 }

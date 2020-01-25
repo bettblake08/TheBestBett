@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from "framer-motion";
 import Header from "../components/header";
-import LandingPage from "../components/landingPage";
-import WorkPage from "../components/workPage";
+import LandingPage from "../views/landingPage";
+import WorkPage from "../views/workPage";
 import PageSelector from "../components/pageSelector";
 
 import './App.scss';

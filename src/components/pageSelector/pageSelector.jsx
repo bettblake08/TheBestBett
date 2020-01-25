@@ -1,31 +1,44 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./pageSelector.scss";
 
-class PageSelector extends Component {
-  navigateTo = () => {};
+const darkConfig = {
+  "/": false,
+  "/profile": false,
+  "/work": false,
+  "/contact": true
+};
 
-  renderPageOptions = (label, icon, url) => (
-    <div className="page-options__option">
+const PageOption = ({ label, icon, url }) => {
+  const location = useLocation();
+
+  return (
+    <div
+      className={`page-options__option${location.pathname === url ? "--selected" : ""}`}
+    >
       <Link to={url}>
-        <div className={`page-options__option__icon far fa-${icon} fa-2x`}></div>
+        <div
+          className={`page-options__option__icon far fa-${icon} fa-2x`}
+        ></div>
         <label>
           <span>{label}</span>
         </label>
       </Link>
     </div>
   );
+};
 
-  render() {
-    return (
-      <div className="page-options">
-        {this.renderPageOptions("Home", "user", "/")}
-        {this.renderPageOptions("Profile", "address-card", "/profile")}
-        {this.renderPageOptions("Work", "folder-open", "/work")}
-        {this.renderPageOptions("Contact", "comment", "/contact")}
-      </div>
-    );
-  }
-}
+const PageSelector = () => {
+  const location = useLocation();
+
+  return (
+    <div className={`page-options ${darkConfig[location.pathname] ? "page-options--dark" : ""}`}>
+      <PageOption label="Home" icon="user" url="/" />
+      <PageOption label="Profile" icon="address-card" url="/profile" />
+      <PageOption label="Work" icon="folder-open" url="/work" />
+      <PageOption label="Contact" icon="comment" url="/contact" />
+    </div>
+  );
+};
 
 export default PageSelector;
