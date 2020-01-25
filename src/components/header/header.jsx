@@ -22,8 +22,8 @@ const headerStyleConfig = {
     isSocialDark: true
   },
   "/contact": {
-    isLogoDark: true,
-    isSocialDark: true
+    isLogoDark: false,
+    isSocialDark: false
   }
 };
 

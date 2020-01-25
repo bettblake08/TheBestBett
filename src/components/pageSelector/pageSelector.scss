@@ -22,10 +22,9 @@
 
       label {
         font-family: $font-primary;
-        color: $color-primary;
+        color: $color-primary-white;
         width: 5rem;
         height: 5rem;
-        border-radius: 2.5rem;
         line-height: 5rem;
         overflow: hidden;
         font-size: 2rem;
@@ -33,6 +32,7 @@
         z-index: 0;
         visibility: hidden;
         padding-left: 6rem;
+        border-radius: 5rem 0 0 5rem;
         @include transition-quick();
       }
 
@@ -40,8 +40,8 @@
         label {
           display: block;
           width: 20rem;
-          background-color: $color-primary-white;
-          padding-left: 6rem;
+          background-color: $color-grey-dark-fade;
+          padding-left: 7rem;
           visibility: visible;
         }
       }
@@ -62,9 +62,9 @@
 
     &:hover &__icon,
     &--selected &__icon {
-      background-color: $color-primary;
+      background-color: $color-secondary;
       color: $color-primary-white;
-      border: solid 0.1rem $color-primary;
+      border: solid 0.1rem $color-secondary;
     }
   }
 

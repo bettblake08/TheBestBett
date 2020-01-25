@@ -1,0 +1,155 @@
+@import "../../assets/scss/abstract/variables";
+@import "../../assets/scss/abstract/mixins";
+
+$contact-grid-border: solid 0.1rem #dfdfdf17;
+$color-primary-dark: #000c1e;
+
+.contact-page {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 10vh 90vh;
+  grid-template-areas:
+    "header header"
+    "selector view";
+  background-image: radial-gradient(
+    circle at top,
+    $color-secondary,
+    $color-primary-dark
+  );
+  height: 100vh;
+  width: 100%;
+  transition: 1s ease all;
+
+  &--selected {
+    background-image: radial-gradient(
+      circle at top,
+      $color-primary-dark,
+      $color-primary-dark
+    );
+  }
+  &__header {
+    height: 10vh;
+    grid-area: header;
+    border-bottom: $contact-grid-border;
+  }
+
+  &__page-selector {
+    border-right: $contact-grid-border;
+    grid-area: selector;
+  }
+
+  &__contacts {
+    grid-area: view;
+    display: flex;
+  }
+}
+
+.contact-section {
+  &,
+  &--selected {
+    width: 25%;
+    height: 100%;
+    border-right: $contact-grid-border;
+    padding: 3rem 5rem;
+    position: relative;
+
+    h1 {
+      font-size: 3rem;
+      color: $color-primary-white;
+      font-family: $font-primary;
+    }
+
+    h3 {
+      font-size: 2rem;
+      color: $color-secondary;
+      font-family: $font-secondary;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    @include transition(0.5s ease all);
+
+    img {
+      min-width: auto;
+      height: 100%;
+    }
+  }
+
+  &__fade {
+    box-shadow: $box-shadow-light-inset;
+    background-image: radial-gradient(circle at top right, transparent, $color-primary-dark);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+  }
+
+  &--selected &__image {
+    opacity: 1;
+  }
+
+  &__details {
+    position: absolute;
+    z-index: 100;
+  }
+
+  &__number {
+    font-size: 2rem;
+    color: $color-primary-white;
+    font-family: $font-secondary;
+    padding-bottom: 2rem;
+    border-bottom: solid 0.3rem $color-secondary;
+    width: 2rem;
+  }
+
+  &__body {
+    p {
+      color: $color-primary-white;
+      font-family: $font-secondary;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__icon {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin: 6rem 0;
+
+    svg {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 0;
+    }
+
+    circle {
+      stroke-dasharray: 180 120;
+      stroke-dashoffset: 300;
+      stroke: $color-secondary;
+    }
+
+    i {
+      position: absolute;
+      z-index: 100;
+      color: #ffffffbd;
+      transform: translate(-50%, -50%);
+      margin: 50% 0 0 50%;
+      @include transition-quick();
+    }
+  }
+
+  &--selected i {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}

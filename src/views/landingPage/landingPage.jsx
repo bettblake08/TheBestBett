@@ -4,7 +4,7 @@ import SlidingPage from "../../components/slidingPage/slidingPage";
 import "./landingPage.scss";
 
 export default () => (
-  <SlidingPage {...mainSliderConfig} >
+  <SlidingPage {...mainSliderConfig} className="landing-page" >
     <div className="landing-page__info">
       <div className="info__intro">
         <h3>Hi, I'm</h3>
