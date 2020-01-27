@@ -33,7 +33,7 @@ export default [
   },
   {
     id: 6,
-    title: "",
+    title: "Rodrick",
     image: "https://picsum.photos/id/537/1600/800",
     description: "This is a basic example of a description"
   },
