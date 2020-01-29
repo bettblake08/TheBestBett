@@ -1,3 +1,3 @@
-import page from "./landingPage";
+import page from "./profilePage";
 
 export default page;

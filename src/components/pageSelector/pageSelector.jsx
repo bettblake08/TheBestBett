@@ -4,7 +4,7 @@ import "./pageSelector.scss";
 
 const darkConfig = {
   "/": false,
-  "/profile": false,
+  "/profile": true,
   "/work": false,
   "/contact": true
 };

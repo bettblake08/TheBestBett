@@ -15,8 +15,8 @@ const headerStyleConfig = {
     isSocialDark: false
   },
   "/profile": {
-    isLogoDark: false,
-    isSocialDark: false
+    isLogoDark: true,
+    isSocialDark: true
   },
   "/work": {
     isLogoDark: false,
