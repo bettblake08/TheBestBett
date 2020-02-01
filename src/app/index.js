@@ -1,5 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation
+} from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Header from "../components/header";
 import LandingPage from "../views/landingPage";
@@ -7,18 +12,14 @@ import ProfilePage from "../views/profilePage";
 import WorkPage from "../views/workPage";
 import ContactPage from "../views/contactPage";
 
-import PageSelector from "../components/pageSelector";
-
-import './App.scss';
 
 const Pages = () => {
-  const location  = useLocation();
-  
+  const location = useLocation();
+
   return (
     <React.Fragment>
-      <Header />
-      <PageSelector />
-      <AnimatePresence>
+      {/* <Header /> */}
+      <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/profile" component={ProfilePage} />
@@ -28,7 +29,7 @@ const Pages = () => {
       </AnimatePresence>
     </React.Fragment>
   );
-}
+};
 
 function App() {
   return (

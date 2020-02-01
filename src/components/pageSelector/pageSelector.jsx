@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./pageSelector.scss";
 
 const darkConfig = {
@@ -9,12 +10,43 @@ const darkConfig = {
   "/contact": true
 };
 
+const optionVariants = {
+  "page-initial": {
+    opacity: 0,
+    transform: "translateX(-5rem)"
+  },
+  "page-in": {
+    opacity: 1,
+    transform: "translateX(0)"
+  },
+  "page-out": {
+    opacity: 0
+  }
+};
+
+const selectorVariants = {
+  "page-in": {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 2
+    }
+  },
+  "page-out": {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 const PageOption = ({ label, icon, url }) => {
   const location = useLocation();
 
   return (
-    <div
-      className={`page-options__option${location.pathname === url ? "--selected" : ""}`}
+    <motion.div
+      className={`page-options__option${
+        location.pathname === url ? "--selected" : ""
+      }`}
+      variants={optionVariants}
     >
       <Link to={url}>
         <div
@@ -24,7 +56,7 @@ const PageOption = ({ label, icon, url }) => {
           <span>{label}</span>
         </label>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
@@ -32,12 +64,17 @@ const PageSelector = () => {
   const location = useLocation();
 
   return (
-    <div className={`page-options ${darkConfig[location.pathname] ? "page-options--dark" : ""}`}>
+    <motion.div
+      className={`page-options ${
+        darkConfig[location.pathname] ? "page-options--dark" : ""
+      }`}
+      variants={selectorVariants}
+    >
       <PageOption label="Home" icon="user" url="/" />
       <PageOption label="Profile" icon="address-card" url="/profile" />
       <PageOption label="Work" icon="folder-open" url="/work" />
       <PageOption label="Contact" icon="comment" url="/contact" />
-    </div>
+    </motion.div>
   );
 };
 
