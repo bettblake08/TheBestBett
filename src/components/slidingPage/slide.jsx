@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { pageOpenTransition, pageCloseTransition } from "./slideConfig";
 
-const transitionPaceReducer = 5;
+const transitionPaceReducer = 6;
 
 const slideConfig = {
   initial: "page-initial",

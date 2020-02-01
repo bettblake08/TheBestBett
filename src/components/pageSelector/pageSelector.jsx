@@ -13,11 +13,11 @@ const darkConfig = {
 const optionVariants = {
   "page-initial": {
     opacity: 0,
-    transform: "translateX(-5rem)"
+    transform: "translateX(-5rem) scale(0.6)"
   },
   "page-in": {
     opacity: 1,
-    transform: "translateX(0)"
+    transform: "translateX(0) scale(1)"
   },
   "page-out": {
     opacity: 0
