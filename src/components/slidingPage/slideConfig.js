@@ -1,7 +1,7 @@
 export const transitionPaceReducer = 3;
 
 export const pageOpenTransition = {
-  delay: 4 / transitionPaceReducer,
+  delay: 2 / transitionPaceReducer,
   duration: 3 / transitionPaceReducer,
   ease: [0.5, 1, 1, 0.9]
 };

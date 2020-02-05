@@ -54,8 +54,8 @@ const Slide = ({ direction }) => {
         {...slideConfig}
         className={`page__slide page__slide--${direction}`}
       >
-        <motion.div {...generateConfig(direction)}></motion.div>
-        <motion.div {...generateConfig(direction)}></motion.div>
+        {/* <motion.div {...generateConfig(direction)}></motion.div> */}
+        {/* <motion.div {...generateConfig(direction)}></motion.div> */}
         <motion.div {...generateConfig(direction)}></motion.div>
       </motion.div>
     );

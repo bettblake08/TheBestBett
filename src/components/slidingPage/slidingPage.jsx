@@ -14,14 +14,14 @@ const mainPageConfig = {
   exit: "page-out",
   variants: {
     "page-initial": {
-      width: "0%"
+      // width: "0%"
     },
     "page-in": {
-      width: "100%",
+      // width: "100%",
       transition: pageOpenTransition
     },
     "page-out": {
-      width: "0%",
+      // width: "0%",
       transition: pageCloseTransition
     }
   },
@@ -100,7 +100,7 @@ const SlidingPage = props => {
           {children}
         </motion.div>
       </motion.div>
-      <motion.div {...viewPlaceholderConfig}></motion.div>
+      {/* <motion.div {...viewPlaceholderConfig}></motion.div> */}
       <Slider direction="right" />
     </>
   );

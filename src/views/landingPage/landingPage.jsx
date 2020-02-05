@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import Typed from "typed.js";
 import mainSliderConfig from "../../utilities/mainPageSlider";
 import SlidingPage from "../../components/slidingPage/slidingPage";
-import "./landingPage.scss";
 import { letterAnimation } from "../../utilities/animationHelpers";
+import person from "../../assets/images/black-businessman-png-2.png";
+import "./landingPage.scss";
 
 const variants = {
   "page-in": {
@@ -21,7 +22,7 @@ const variants = {
 };
 
 export default class LandingPage extends Component {
-  componentDidMount(){
+  componentDidMount() {
     setTimeout(() => {
       let typed = new Typed(this.el, {
         strings: ["Software Engineer", "Fullstack Engineer", "UI Designer"],
@@ -30,13 +31,16 @@ export default class LandingPage extends Component {
       });
     }, 3000);
   }
-  
+
   render() {
     return (
       <SlidingPage {...mainSliderConfig} className="landing-page">
+        {/* <img src={person} alt="Black person logo" style={{ position: "absolute", top: "50vh", right: "10rem"}}/> */}
         <div className="landing-page__info">
           <motion.div className="info__intro">
-            <h3>Hi, I'm</h3>
+            <motion.div className="info__intro__greeting" variants={variants}>
+              {letterAnimation("Hi, I'm")}
+            </motion.div>
             <motion.div className="info__intro__name" variants={variants}>
               {letterAnimation("Brian Kipkirui Bett")}
             </motion.div>
