@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { motion } from "framer-motion";
 import Typed from "typed.js";
-import mainSliderConfig from "../../utilities/mainPageSlider";
 import SlidingPage from "../../components/slidingPage/slidingPage";
 import { letterAnimation } from "../../utilities/animationHelpers";
-import person from "../../assets/images/black-businessman-png-2.png";
 import "./landingPage.scss";
 
 const variants = {
@@ -34,8 +32,7 @@ export default class LandingPage extends Component {
 
   render() {
     return (
-      <SlidingPage {...mainSliderConfig} className="landing-page">
-        {/* <img src={person} alt="Black person logo" style={{ position: "absolute", top: "50vh", right: "10rem"}}/> */}
+      <SlidingPage className="landing-page">
         <div className="landing-page__info">
           <motion.div className="info__intro">
             <motion.div className="info__intro__greeting" variants={variants}>

@@ -4,18 +4,26 @@
   position: relative;
 
   &__window {
-    width: 100%;
+    width: calc(100% - 15rem);
     height: 100vh;
-    transform: translateX(-50%);
-    left: 50%;
     overflow: hidden;
     position: absolute;
+    right: 0;
+    background-color: $color-secondary;
+  }
+
+  &__selector {
+    width: 15rem;
+    height: 100vh;
+    background-color: $color-tertiary;
+    position: absolute;
+    left: 0;
   }
 
   &__view {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: $box-shadow-light;
   }
 
   &__slide {

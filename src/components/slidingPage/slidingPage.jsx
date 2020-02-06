@@ -1,28 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLocation, useHistory } from "react-router-dom";
-import { pageOpenTransition, pageCloseTransition, transitionPaceReducer } from "./slideConfig";
-import PageSelector from "../pageSelector";
 import Header from "../header";
-import Slider from "./slide";
+
+const transitionPaceReducer = 3;
 
 const pages = ["/", "/profile", "/work"];
 
+const boxShadow = "0rem 0.1rem 4rem -1.5rem #000 inset"
 const mainPageConfig = {
   initial: "page-initial",
   animate: "page-in",
   exit: "page-out",
   variants: {
     "page-initial": {
-      // width: "0%"
+      boxShadow
     },
     "page-in": {
-      // width: "100%",
-      transition: pageOpenTransition
+      boxShadow: "0rem 0rem 0rem 0rem #000 inset",
+      transition: {
+        duration: 4 / transitionPaceReducer,
+        ease: "anticipate"
+      }
     },
     "page-out": {
-      // width: "0%",
-      transition: pageCloseTransition
+      boxShadow,
+      transition: {
+        duration: 0.5 / transitionPaceReducer,
+        ease: "anticipate"
+      }
     }
   },
   style: {
@@ -31,36 +37,38 @@ const mainPageConfig = {
 };
 
 const viewVariants = {
+  "page-initial": {
+    scale: 0.9,
+    y: "100vh"
+  },
   "page-in": {
+    scale: 1,
+    y: "0vh",
     transition: {
+      scale: {
+        delay: 3 / transitionPaceReducer,
+        duration: 1 / transitionPaceReducer
+      },
+      y: {
+        duration: 3 / transitionPaceReducer,
+        ease: "anticipate"
+      },
       staggerChildren: 0.3 / transitionPaceReducer,
       delayChildren: 7 / transitionPaceReducer
     }
   },
   "page-out": {
+    scale: 0.9,
+    y: "-100vh",
     transition: {
-      staggerChildren: 0.3 / transitionPaceReducer,
-      delayChildren: 7 / transitionPaceReducer
-    }
-  }
-};
-
-const viewPlaceholderConfig = {
-  className: "page__holder",
-  initial: "page-initial",
-  animate: "page-in",
-  exit: "page-out",
-  variants: {
-    "page-initial": {
-      width: "0%"
-    },
-    "page-in": {
-      width: "100%",
-      transition: pageOpenTransition
-    },
-    "page-out": {
-      width: "0%",
-      transition: pageCloseTransition
+      y: {
+        delay: 1 / transitionPaceReducer,
+        duration: 3 / transitionPaceReducer,
+        ease: "anticipate"
+      },
+      scale: {
+        duration: 1 / transitionPaceReducer
+      }
     }
   }
 };
@@ -72,7 +80,7 @@ const SlidingPage = props => {
 
   return (
     <>
-      <Slider direction="left" />
+      <div className="page__selector"></div>
       <motion.div
         {...mainPageConfig}
         className="page__window"
@@ -96,12 +104,9 @@ const SlidingPage = props => {
           className={`page__view ${className}`}
         >
           <Header />
-          <PageSelector />
           {children}
         </motion.div>
       </motion.div>
-      {/* <motion.div {...viewPlaceholderConfig}></motion.div> */}
-      <Slider direction="right" />
     </>
   );
 };

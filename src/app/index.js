@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Header from "../components/header";
+import PageSelector from "../components/pageSelector";
 import LandingPage from "../views/landingPage";
 import ProfilePage from "../views/profilePage";
 import WorkPage from "../views/workPage";
@@ -18,7 +19,7 @@ const Pages = () => {
 
   return (
     <React.Fragment>
-      {/* <Header /> */}
+      <PageSelector />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={LandingPage} />

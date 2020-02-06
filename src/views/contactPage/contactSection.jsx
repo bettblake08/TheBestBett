@@ -3,7 +3,26 @@ import { motion } from "framer-motion";
 import contactPageContext from "./contactPageContext";
 import Button from "../../components/button";
 
-const ContactSection = ({ title, index, handle, icon, image, url, children }) => {
+const ringVariants = {
+  "rotate-loop": {
+    rotate: 360,
+    transition: {
+      ease: "linear",
+      duration: 15,
+      loop: Infinity
+    }
+  }
+};
+
+const ContactSection = ({
+  title,
+  index,
+  handle,
+  icon,
+  image,
+  url,
+  children
+}) => {
   const [components, setComponents] = useState({});
   const [isSelected, setIsSelected] = useState(false);
 
@@ -32,16 +51,7 @@ const ContactSection = ({ title, index, handle, icon, image, url, children }) =>
             <div className="contact-section__details">
               <div className="contact-section__number">{`0${index}`}</div>
               <div className="contact-section__icon">
-                <motion.svg
-                  animate={{
-                    rotate: 360
-                  }}
-                  transition={{
-                    ease: "linear",
-                    duration: 60,
-                    loop: Infinity
-                  }}
-                >
+                <motion.svg animate="rotate-loop" variants={ringVariants}>
                   <circle
                     stroke-width="1"
                     fill="transparent"
@@ -62,10 +72,7 @@ const ContactSection = ({ title, index, handle, icon, image, url, children }) =>
             <div className="contact-section__button">
               <Button
                 defaultStatus={7}
-                parent={{
-                  components,
-                  setComponents
-                }}
+                parent={{ components, setComponents }}
                 name="contactButton"
                 config={{
                   icon: "arrow-right",

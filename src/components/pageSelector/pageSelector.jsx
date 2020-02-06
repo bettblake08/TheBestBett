@@ -15,11 +15,11 @@ const optionVariants = {
     opacity: 0,
     transform: "translateX(-5rem) scale(0.6)"
   },
-  "page-in": {
+  "entrance": {
     opacity: 1,
     transform: "translateX(0) scale(1)"
   },
-  "page-out": {
+  "exit": {
     opacity: 0
   }
 };
@@ -68,6 +68,8 @@ const PageSelector = () => {
       className={`page-options ${
         darkConfig[location.pathname] ? "page-options--dark" : ""
       }`}
+      animate="entrance"
+      exit="exit"
       variants={selectorVariants}
     >
       <PageOption label="Home" icon="user" url="/" />
