@@ -8,7 +8,6 @@ import LogoDark from "../../assets/images/thebestbett-black-1.png";
 
 import "./header.scss";
 
-
 const headerStyleConfig = {
   "/": {
     isLogoDark: false,
@@ -28,9 +27,20 @@ const headerStyleConfig = {
   }
 };
 
-const SocialLink = ({icon, url = ""}) => (
+const socialIconVariants = {
+  hover: {
+    scale: 1.5,
+    transition: {
+      duration: 0.1
+    }
+  }
+};
+
+const SocialLink = ({ icon, url = "" }) => (
   // eslint-disable-next-line jsx-a11y/anchor-has-content
-  <motion.a whileHover={{ scale: 1.5 }}
+  <motion.a
+    variants={socialIconVariants}
+    whileHover="hover"
     href={url}
     className={`fab fa-${icon} fa-2x`}
     target="_blank"
@@ -54,6 +64,6 @@ const Header = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
