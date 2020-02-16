@@ -1,0 +1,58 @@
+@import "../../../assets/scss/abstract/variables";
+
+.p-landing {
+    padding: 25vh 5%;
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-areas:
+      "picture first-text"
+      "picture second-text"
+      "third-text third-text";
+
+    &__greeting-image {
+      grid-area: picture;
+      width: 90%;
+      height: 90%;
+      margin: 0 2rem 2rem 0;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    img {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    span {
+      font-size: 10rem;
+      color: $color-grey-dark;
+      text-align: justify;
+      font-family: $font-primary;
+      font-weight: bold;
+
+      &:nth-child(2) {
+        grid-area: first-text;
+      }
+
+      &:nth-child(3) {
+        grid-area: second-text;
+      }
+
+      &:nth-child(4) {
+        grid-area: third-text;
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      color: $color-primary-white;
+      margin: 0 0 0.5rem 0;
+    }
+  }

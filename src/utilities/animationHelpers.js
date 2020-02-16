@@ -30,11 +30,25 @@ export const letterAnimation = (word, variants = {}) => {
     return (
       <motion.span
         key={index}
-        variants={{ ...defaultVariants, variants }}
+        variants={{ ...defaultVariants, ...variants }}
+        whileHover="hover"
         style={style}
       >
         {letter}
       </motion.span>
     );
   });
+};
+
+/**
+ * Returns the top and left page offsets
+ * @param {Element} el
+ */
+export const getPageOffset = el => {
+  let rect = el.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  const top = rect.top + scrollTop, left = rect.left + scrollLeft;
+  return { top, left };
 };

@@ -1,0 +1,65 @@
+@import "../../../assets/scss/abstract/variables";
+
+.p-education {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  float: left;
+  margin-top: 50vh;
+
+  &__info {
+    background-color: #017a39;
+    position: absolute;
+    z-index: 30;
+    width: 70%;
+    left: 15%;
+    box-shadow: $box-shadow-light;
+
+    &__left {
+      width: 50%;
+      float: right;
+      min-height: 50vh;
+      margin-left: 25%;
+
+      h4 {
+        color: $color-grey-light;
+        font-size: 2.5rem;
+        margin: 3rem 0 2rem 0;
+        grid-area: title;
+      }
+
+      h1 {
+        color: $color-primary-white;
+        font-size: 5rem;
+        line-height: 6rem;
+        margin: 0;
+        grid-area: age;
+        float: left;
+      }
+
+      h3 {
+        font-size: 3rem;
+        color: $color-grey-light;
+        float: left;
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 50;
+    top: 50rem;
+    width: 30rem;
+    height: 30rem;
+    padding: 5rem;
+    margin-left: 25%;
+    background-color: $color-primary-white;
+    box-shadow: $box-shadow-light;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

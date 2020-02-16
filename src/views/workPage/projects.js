@@ -1,5 +1,3 @@
-import pic from "../../assets/images/landing-page.jpg";
-
 export default [
   {
     id: 1,

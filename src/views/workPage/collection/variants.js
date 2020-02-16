@@ -1,3 +1,5 @@
+import globalVariants from "../../../utilities/globalVariants";
+
 const variants = {
   collection: {
     "card-in": {
@@ -58,20 +60,7 @@ const variants = {
     }
   },
   cardImage: {
-    "card-hover": {
-      x: ["0%", "-5%", "-5%", "5%", "5%"],
-      y: ["0%", "-5%", "5%", "-5%", "5%"],
-      scale: 1.2,
-      transition: {
-        ease: "linear",
-        duration: 10,
-        loop: Infinity,
-        scale: {
-          ease: "linear",
-          duration: 0.5
-        }
-      }
-    }
+    "card-hover": globalVariants.imageAnimation
   }
 };
 

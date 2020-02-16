@@ -74,7 +74,7 @@ const viewVariants = {
 };
 
 const SlidingPage = props => {
-  const { children, className } = props;
+  const { children, className, onScroll = () => {} } = props;
   const location = useLocation();
   const history = useHistory();
 
@@ -102,6 +102,7 @@ const SlidingPage = props => {
         <motion.div
           variants={viewVariants}
           className={`page__view ${className}`}
+          onScroll={onScroll}
         >
           <Header />
           {children}

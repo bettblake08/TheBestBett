@@ -22,6 +22,7 @@ const variants = {
 export default class LandingPage extends Component {
   componentDidMount() {
     setTimeout(() => {
+      // eslint-disable-next-line no-unused-vars
       let typed = new Typed(this.el, {
         strings: ["Software Engineer", "Fullstack Engineer", "UI Designer"],
         loop: true,
@@ -39,7 +40,7 @@ export default class LandingPage extends Component {
               {letterAnimation("Hi, I'm")}
             </motion.div>
             <motion.div className="info__intro__name" variants={variants}>
-              {letterAnimation("Brian Kipkirui Bett")}
+              {letterAnimation("BRIAN K. BETT")}
             </motion.div>
           </motion.div>
 
