@@ -1,10 +1,10 @@
 import React from "react";
 import ContactSection from "../contactSection";
-import socials from "../../../utilities/social";
+import Profile from "../../../me";
 
 export default ({ index }) => {
   return (
-    <ContactSection {...socials.github} index={index}>
+    <ContactSection {...Profile.socials.github} index={index}>
       <p>Test description</p>
     </ContactSection>
   );

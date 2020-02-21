@@ -9,7 +9,6 @@ export default ({ scrollY, children, className }) => {
   const inView = isSectionInView(sectionRef.current, scrollY);
 
   if (previouslyInView !== inView) {
-    console.log(previouslyInView, inView);
     setPreviouslyInView(inView);
     controls.start(inView ? "section-in" : "section-out");
   }

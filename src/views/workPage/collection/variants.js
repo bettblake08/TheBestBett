@@ -31,10 +31,10 @@ const variants = {
     }
   },
   cardSelected: {
-    "card-in": i => ({
+    "card-in": {
       scale: 1,
       opacity: 1
-    }),
+    },
     "card-initial": {
       scale: 0.5,
       opacity: 0,

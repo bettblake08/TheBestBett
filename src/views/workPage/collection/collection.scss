@@ -6,9 +6,7 @@
   float: left;
 
   &__title {
-    font-size: 2rem;
     color: $color-grey-dark-fade;
-    font-family: $font-primary;
     border-left: solid 0.2rem $color-primary;
     padding-left: 1rem;
   }
@@ -16,7 +14,7 @@
   &__list {
     width: 100%;
     margin-top: 3rem;
-    float: left
+    float: left;
   }
 
   &__item {
@@ -33,18 +31,11 @@
       float: left;
       position: relative;
       @include transition-quick;
-
-      &:hover {
-        box-shadow: $box-shadow-light;
-      }
     }
 
     &__name {
       color: $color-primary-white;
-      font-family: $font-primary;
       padding: 1rem;
-      font-size: 2rem;
-      font-weight: bold;
       overflow: hidden;
       position: absolute;
       z-index: 10;
@@ -72,106 +63,4 @@
       margin-bottom: 1rem;
     }
   }
-}
-
-$orange: #ff8a30;
-$red: #f45e61;
-$purple: #6477b9;
-$blue: #0eb7da;
-
-// Basic styles
-button {
-  // Required, since we're setting absolute on pseudo-elements
-  position: relative;
-  vertical-align: middle;
-
-  &::before,
-  &::after {
-    box-sizing: inherit;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.draw {
-    transition: color 0.25s;
-
-  &::before,
-  &::after {
-    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-    border: 2px solid transparent;
-    width: 0;
-    height: 0;
-  }
-
-  // This covers the top & right borders (expands right, then down)
-  &::before {
-    top: 0;
-    left: 0;
-  }
-
-  // And this the bottom & left borders (expands left, then up)
-  &::after {
-    bottom: 0;
-    right: 0;
-  }
-  
-  &:hover {
-    color: $color-primary;
-  }
-
-  // Hover styles
-  &:hover::before,
-  &:hover::after {
-    width: 100%;
-    height: 100%;
-  }
-
-  &:hover::before {
-    border-top-color: $color-primary; // Make borders visible
-    border-right-color: $color-primary;
-    transition:
-      width 0.25s ease-out, // Width expands first
-      height 0.25s ease-out 0.25s; // And then height
-  }
-
-  &:hover::after {
-    border-bottom-color: $color-primary; // Make borders visible
-    border-left-color: $color-primary;
-    transition:
-      border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
-      width 0.25s ease-out 0.5s, // And then exanding width
-      height 0.25s ease-out 0.75s; // And finally height
-  }
-}
-
-// Inherits from .draw
-.meet {
-  
-  &:hover {
-    color: $color-primary;
-  }
-
-  // Start ::after in same position as ::before
-  &::after {
-    top: 0;
-    left: 0;
-  }
-
-  // Change colors
-  &:hover::before {
-    border-top-color: $color-primary;
-    border-right-color: $color-primary;
-  }
-
-  &:hover::after {
-    border-bottom-color: $color-primary;
-    border-left-color: $color-primary;
-    transition: // Animate height first, then width
-      height 0.25s ease-out,
-      width 0.25s ease-out 0.25s;
-  }
-
 }

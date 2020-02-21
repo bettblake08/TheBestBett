@@ -49,7 +49,7 @@ export default class LandingPage extends Component {
               {letterAnimation("I'm a ")}
             </motion.div>
             <span
-              class="info__job__title"
+              className="info__job__title"
               style={{ whiteSpace: "pre" }}
               ref={ref => (this.el = ref)}
             ></span>

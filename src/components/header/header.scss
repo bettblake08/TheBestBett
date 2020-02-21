@@ -11,6 +11,12 @@
     width: auto;
     height: 4rem;
     float: left;
+    @include transition-quick;
+    
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
 
     img {
       height: 100%;

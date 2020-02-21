@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,12 +6,18 @@ import {
   useLocation
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import AppContext from "./context";
 import PageSelector from "../components/pageSelector";
 import LandingPage from "../views/landingPage";
 import ProfilePage from "../views/profilePage";
 import WorkPage from "../views/workPage";
 import ContactPage from "../views/contactPage";
 
+const storeDefault = {
+  header: {
+    isLogoHidden: false
+  }
+};
 
 const Pages = () => {
   const location = useLocation();
@@ -31,14 +37,23 @@ const Pages = () => {
   );
 };
 
-function App() {
+export default () => {
+  const [store, setStore] = useState(storeDefault);
+
   return (
     <div className="page">
       <Router>
-        <Pages />
+        <AppContext.Provider value={{
+          ...store,
+          toggleLogoVisibility: () => {
+            let updatedStore = { ...store };
+            updatedStore.header.isLogoHidden = !store.header.isLogoHidden;
+            setStore(updatedStore);
+          }
+        }}>
+          <Pages />
+        </AppContext.Provider>
       </Router>
     </div>
   );
-}
-
-export default App;
+};

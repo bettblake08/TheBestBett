@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import AppContext from "../../app/context";
 
-import socials from "../../utilities/social";
+import Profile from "../../me";
 import Logo from "../../assets/images/thebestbett-1.png";
 import LogoDark from "../../assets/images/thebestbett-black-1.png";
 
@@ -51,18 +52,32 @@ const SocialLink = ({ icon, url = "" }) => (
 const Header = () => {
   const location = useLocation();
   const style = headerStyleConfig[location.pathname];
+
   return (
-    <div className="header">
-      <div className="header__logo">
-        <img src={style.isLogoDark ? LogoDark : Logo} alt="TheBestBett logo" />
-      </div>
-      <div className={`header__socials${style.isSocialDark ? "--dark" : ""}`}>
-        <SocialLink {...socials.facebook} />
-        <SocialLink {...socials.twitter} />
-        <SocialLink {...socials.linkedin} />
-        <SocialLink {...socials.github} />
-      </div>
-    </div>
+    <AppContext.Consumer>
+      {value => (
+        <div className="header">
+          <motion.div
+            className={`header__logo ${
+              value.header.isLogoHidden ? "header__logo--hidden" : ""
+            }`}
+          >
+            <img
+              src={style.isLogoDark ? LogoDark : Logo}
+              alt="TheBestBett logo"
+            />
+          </motion.div>
+          <div
+            className={`header__socials${style.isSocialDark ? "--dark" : ""}`}
+          >
+            <SocialLink {...Profile.socials.facebook} />
+            <SocialLink {...Profile.socials.twitter} />
+            <SocialLink {...Profile.socials.linkedin} />
+            <SocialLink {...Profile.socials.github} />
+          </div>
+        </div>
+      )}
+    </AppContext.Consumer>
   );
 };
 

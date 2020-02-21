@@ -5,6 +5,41 @@ import variants from "./variants";
 
 import "./collection.scss";
 
+const Work = ({ work, index, selected, handleOnClick }) => (
+  <motion.div
+    id={work.id}
+    variants={selected ? variants.cardSelected : variants.card}
+    transition={{
+      type: "spring",
+      damping: 5,
+      mass: 0.75,
+      stiffness: 500,
+      duration: 0.5
+    }}
+    className={`work-collection__item${selected ? "--selected" : ""}`}
+    onClick={() => handleOnClick(index)}
+    layoutTransition={{
+      ease: "easeIn",
+      duration: 0.5
+    }}
+    whileHover="card-hover"
+  >
+    <div className="work-collection__item__image">
+      <motion.img
+        src={work.image}
+        alt={`${work.title}`}
+        variants={variants.cardImage}
+      />
+    </div>
+    <motion.div
+      className="work-collection__item__name font--label"
+      variants={selected ? variants.cardNameSelected : variants.cardName}
+    >
+      {work.title}
+    </motion.div>
+  </motion.div>
+);
+
 class Collection extends Component {
   constructor(props) {
     super(props);
@@ -29,38 +64,6 @@ class Collection extends Component {
     );
   };
 
-  renderItem = (item, index, selected) => (
-    <motion.div
-      key={item.id}
-      id={item.id}
-      variants={selected ? variants.cardSelected : variants.card}
-      transition={{
-        type: "spring",
-        damping: 5,
-        mass: 0.75,
-        stiffness: 500,
-        duration: 0.5
-      }}
-      className={`work-collection__item${selected ? "--selected" : ""}`}
-      onClick={() => this.handleOnClick(index)}
-      layoutTransition={{
-        ease: "easeIn",
-        duration: 0.5
-      }}
-      whileHover="card-hover"
-    >
-      <div className="work-collection__item__image">
-        <motion.img src={item.image} alt={`${item.title}`} variants={variants.cardImage} />
-      </div>
-      <motion.div
-        className="work-collection__item__name"
-        variants={selected ? variants.cardNameSelected : variants.cardName}
-      >
-        {item.title}
-      </motion.div>
-    </motion.div>
-  );
-
   render() {
     const { title } = this.props;
     const { list } = this.state;
@@ -73,15 +76,17 @@ class Collection extends Component {
         animate="card-in"
         initial="card-initial"
       >
-        <div className="work-collection__title">{title}</div>
+        <div className="work-collection__title font--header">{title}</div>
         <div className="work-collection__list">
-          {list.map((item, index) =>
-            this.renderItem(
-              item,
-              index,
-              selectedWork.group === title && index === 0
-            )
-          )}
+          {list.map((work, index) => (
+            <Work
+              work={work}
+              key={work.id}
+              index={index}
+              selected={selectedWork.group === title && index === 0}
+              handleOnClick={this.handleOnClick}
+            />
+          ))}
         </div>
       </motion.div>
     );

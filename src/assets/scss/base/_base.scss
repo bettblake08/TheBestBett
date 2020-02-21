@@ -15,8 +15,7 @@ code {
 
 html {
   font-size: 10px;
-//   overflow: hidden;
-
+  
   @include respond(desk-small) {
     font-size: 9px;
   }

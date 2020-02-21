@@ -53,7 +53,7 @@ const ContactSection = ({
               <div className="contact-section__icon">
                 <motion.svg animate="rotate-loop" variants={ringVariants}>
                   <circle
-                    stroke-width="1"
+                    strokeWidth="1"
                     fill="transparent"
                     r="58"
                     cx="60"
