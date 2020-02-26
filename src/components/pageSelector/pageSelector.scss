@@ -1,6 +1,8 @@
 @import "../../assets/scss/abstract/variables";
 @import "../../assets/scss/abstract/mixins";
 
+$p-button-name: ".p-button";
+
 .page-options {
   position: fixed;
   z-index: 999;
@@ -11,71 +13,92 @@
   flex-direction: column;
   justify-content: center;
 
-  &__option {
-    &,
-    &--selected {
-      position: relative;
+  &--dark &__option #{$p-button-name}__icon {
+    color: $color-primary;
+    border: solid 0.1rem $color-primary;
+  }
+
+  &--dark &__option--selected #{$p-button-name}__icon {
+    color: $color-primary-white;
+  }
+}
+
+#{$p-button-name} {
+  &,
+  &--selected {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    margin: 1.5rem 0;
+    @include transition-quick();
+
+    label {
+      font-family: $font-primary;
+      color: $color-primary-white;
       width: 5rem;
       height: 5rem;
-      margin: 1.5rem 0;
+      line-height: 5rem;
+      overflow: hidden;
+      font-size: 2rem;
+      position: absolute;
+      z-index: 49;
+      visibility: hidden;
+      padding-left: 6rem;
+      border-radius: 5rem 0 0 5rem;
       @include transition-quick();
-
-      label {
-        font-family: $font-primary;
-        color: $color-primary-white;
-        width: 5rem;
-        height: 5rem;
-        line-height: 5rem;
-        overflow: hidden;
-        font-size: 2rem;
-        position: absolute;
-        z-index: 0;
-        visibility: hidden;
-        padding-left: 6rem;
-        border-radius: 5rem 0 0 5rem;
-        @include transition-quick();
-      }
-
-      &:hover {
-        label {
-          display: block;
-          width: 20rem;
-          background-color: $color-grey-dark-fade;
-          padding-left: 7rem;
-          visibility: visible;
-        }
-      }
     }
 
-    &__icon {
-      border-radius: 50%;
+    &:hover {
+      label {
+        display: block;
+        width: 20rem;
+        background-color: $color-grey-dark-fade;
+        padding-left: 7rem;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__circle {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 48;
+
+    &--outer {
+      stroke: $color-primary;
+      stroke-dasharray: 15 10;
+      stroke-dashoffset: 300;
+    }
+    &--inner {
+      stroke: $color-secondary;
+      stroke-dasharray: 5 2;
+      stroke-dashoffset: 300;
+    }
+  }
+
+  &__icon {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border: solid 0.1rem $color-primary-white;
+    position: absolute;
+    z-index: 50;
+    @include transition-quick();
+
+    i {
       width: 100%;
       height: 100%;
-      border: solid 0.1rem $color-primary-white;
-      position: absolute;
-      z-index: 50;
+      text-align: center;
       color: $color-primary-white;
       line-height: 5rem;
-      text-align: center;
-      @include transition-quick();
-    }
-
-    &:hover &__icon,
-    &--selected &__icon {
-      background-color: $color-secondary;
-      color: $color-primary-white;
-      border: solid 0.1rem $color-secondary;
     }
   }
 
-  &--dark &__option {
-    &__icon {
-      color: $color-primary;
-      border: solid 0.1rem $color-primary;
-    }
-  }
-
-  &--dark &__option--selected &__option__icon {
+  &:hover &__icon,
+  &--selected &__icon {
+    background-color: $color-secondary;
     color: $color-primary-white;
+    border: solid 0.1rem $color-secondary;
   }
 }

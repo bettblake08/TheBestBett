@@ -38,20 +38,80 @@ const selectorVariants = {
   }
 };
 
+const rotateLoop = {
+  rotate: 360,
+  transition: {
+    rotate: {
+      ease: "linear",
+      duration: 15,
+      loop: Infinity
+    },
+    scale: {
+      ease: "linear",
+      duration: 0.2,
+      loop: false
+    }
+  }
+};
+
+const innerRingVariant = {
+  hover: {
+    scale: 1.8,
+    ...rotateLoop
+  }
+};
+
+const outerRingVariant = {
+  hover: {
+    scale: 1.4,
+    ...rotateLoop
+  }
+};
+
+
 const PageOption = ({ label, icon, url }) => {
   const location = useLocation();
 
   return (
     <motion.div
-      className={`page-options__option${
+      className={`p-button${
         location.pathname === url ? "--selected" : ""
       }`}
       variants={optionVariants}
+      whileHover="hover"
     >
       <Link to={url}>
-        <div
-          className={`page-options__option__icon far fa-${icon} fa-2x`}
-        ></div>
+        <motion.svg
+          whileHover="hover"
+          variants={innerRingVariant}
+          className="p-button__circle"
+        >
+          <circle
+            className="p-button__circle--inner"
+            strokeWidth="1"
+            fill="transparent"
+            r="22"
+            cx="50%"
+            cy="50%"
+          />
+        </motion.svg>
+        <motion.svg
+          whileHover="hover"
+          variants={outerRingVariant}
+          className="p-button__circle"
+        >
+          <circle
+            className="p-button__circle--outer"
+            strokeWidth="1"
+            fill="transparent"
+            r="22"
+            cx="50%"
+            cy="50%"
+          />
+        </motion.svg>
+        <div className="p-button__icon">
+          <i className={`far fa-${icon} fa-2x`} />
+        </div>
         <label>
           <span>{label}</span>
         </label>
