@@ -106,6 +106,11 @@ $contact-grid-border: solid 0.1rem #dfdfdf17;
     padding-bottom: 2rem;
     border-bottom: solid 0.3rem $color-secondary;
     width: 2rem;
+    @include transition-quick();
+  }
+
+  &--selected &__number {
+    width: 4rem;
   }
 
   &__body {
@@ -154,6 +159,7 @@ $contact-grid-border: solid 0.1rem #dfdfdf17;
     position: absolute;
     bottom: 10rem;
     width: 5rem;
+    height: 6rem;
     @include transition-quick;
   }
 

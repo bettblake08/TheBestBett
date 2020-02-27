@@ -64,6 +64,7 @@ $p-button-name: ".p-button";
     width: 100%;
     position: absolute;
     z-index: 48;
+    opacity: 0;
 
     &--outer {
       stroke: $color-primary;
@@ -100,5 +101,9 @@ $p-button-name: ".p-button";
     background-color: $color-secondary;
     color: $color-primary-white;
     border: solid 0.1rem $color-secondary;
+  }
+
+  &:hover &__circle {
+    opacity: 1;
   }
 }

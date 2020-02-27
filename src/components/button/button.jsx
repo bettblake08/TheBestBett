@@ -60,29 +60,30 @@ class Button extends Component {
   };
 
   renderIcon = icon => {
-    if (typeof icon === "string")
-      return <i className={`fas fa-${icon} icon`} />;
+    if (typeof icon === "string") return <i className={`fas fa-${icon}`} />;
     return icon;
   };
 
   setIcon = config => (
     <>
-      <div className="button__icon">
-        {this.renderIcon(config.icon)}
+      <div className="button__icon">{this.renderIcon(config.icon)}</div>
+      <div className="button__label">
+        <span className="font--normal">{config.label}</span>
       </div>
-      <div className="button__label font--normal">{config.label}</div>
     </>
   );
 
   render() {
-    const { config: { label, action, icon }} = this.props;
+    const {
+      config: { label, action, icon }
+    } = this.props;
     const { status } = this.state;
     const statusText = COMPONENT_STATUS_CLASS[status];
 
     return (
-      <button type="button" className={`button--${statusText}`} onClick={action}>
+      <div className={`button--${statusText} button--reverse`} onClick={action}>
         {icon ? this.setIcon({ icon, label }) : label}
-      </button>
+      </div>
     );
   }
 }

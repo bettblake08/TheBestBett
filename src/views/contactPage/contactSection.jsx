@@ -76,7 +76,7 @@ const ContactSection = ({
                 name="contactButton"
                 config={{
                   icon: "arrow-right",
-                  label: "Go to",
+                  label: "Check it out",
                   action: () => (window.location.href = url)
                 }}
               />
