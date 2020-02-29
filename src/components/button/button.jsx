@@ -75,13 +75,13 @@ class Button extends Component {
 
   render() {
     const {
-      config: { label, action, icon }
+      config: { label, action, icon, reverse }
     } = this.props;
     const { status } = this.state;
     const statusText = COMPONENT_STATUS_CLASS[status];
 
     return (
-      <div className={`button--${statusText} button--reverse`} onClick={action}>
+      <div className={`button--${statusText} ${reverse ? 'button--reverse' : ''}`} onClick={action}>
         {icon ? this.setIcon({ icon, label }) : label}
       </div>
     );
@@ -96,7 +96,8 @@ Button.propTypes = {
   config: PropTypes.shape({
     action: PropTypes.func,
     label: PropTypes.string,
-    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()])
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]),
+    reverse: PropTypes.bool
   }).isRequired
 };
 

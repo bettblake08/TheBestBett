@@ -1,5 +1,7 @@
 @import "../../../assets/scss/abstract/variables";
 
+$ju-primary: #017a39;
+
 .p-education {
   position: relative;
   width: 100%;
@@ -8,7 +10,7 @@
   margin-top: 50vh;
 
   &__info {
-    background-color: #017a39;
+    background-color: $ju-primary;
     position: absolute;
     z-index: 30;
     width: 70%;
@@ -42,6 +44,34 @@
         color: $color-grey-light;
         float: left;
         margin: 1rem 0;
+      }
+    }
+
+    &__button {
+      width: 25rem;
+      height: 5rem;
+      position: relative;
+      margin-top: 3rem;
+      float: left;
+
+      .button {
+        &--normal {
+          color: $color-primary-white;
+          border: solid 0.1rem $color-primary-white;
+          
+          &:hover,
+          &:hover .button__label{
+            color: $ju-primary;
+          }
+
+          &::before {
+            background-color: white;
+          }
+        }
+
+        &__label {
+          color: $color-primary-white;
+        }
       }
     }
   }

@@ -75,5 +75,14 @@ export default {
       image,
       handle: "bettbrian08"
     }
+  },
+  education: {
+    bachelors: {
+      name: "Jiangsu University",
+      year: 2017,
+      major: "Computer Science And Technology",
+      level: "Bachelor's Degree Graduate",
+      homepage: ""
+    }
   }
 };
