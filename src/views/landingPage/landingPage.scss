@@ -7,8 +7,27 @@
   background-size: cover;
 
   &__info {
-    margin: 40vh 0 0 10rem;
-    width: 50%;
+    margin: 30vh 0 0 10%;
+    width: 80%;
+    height: 50vh;
+    background-color: $color-grey-dark-fade;
+    padding: 5rem 10rem;
+    float: left;
+  }
+
+  &__picture {
+    position: absolute;
+    z-index: 500;
+    bottom: 0;
+    right: 15%;
+    height: 90vh;
+    object-fit: cover;
+    object-position: center;
+
+    img {
+      min-height: 100%;
+      filter: drop-shadow(-5rem -1rem 2rem #00000060) !important;
+    }
   }
 }
 
