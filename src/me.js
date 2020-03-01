@@ -1,7 +1,17 @@
 import image from "./assets/images/landing-page.jpg";
 
 export default {
-  name: "",
+  name: {
+    normal: "Brian Kipkirui Bett",
+    caps: "BRIAN KIPKIRUI BETT"
+  },
+  whoAmI: [
+    "Software Engineer.",
+    "Entrepreneur.",
+    "Thinker.",
+    "Music Enthusiast.",
+    "Athlete."
+  ],
   projects: [
     {
       id: 1,

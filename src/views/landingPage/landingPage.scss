@@ -19,7 +19,7 @@
     position: absolute;
     z-index: 500;
     bottom: 0;
-    right: 15%;
+    right: 10%;
     height: 90vh;
     object-fit: cover;
     object-position: center;
@@ -52,6 +52,15 @@
       margin: 0 0 .5rem 0;
       float: left;
     }
+  }
+
+  &__button {
+    float: left;
+    width: 20rem;
+    height: 5rem;
+    position: relative;
+    margin-top: 3rem;
+    overflow: hidden;
   }
 
   &__job {
