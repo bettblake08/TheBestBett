@@ -49,5 +49,21 @@ export default {
       x: "-50%",
       transition
     }
+  },
+  slideInFromBottom: {
+    initial: {
+      opacity: 0,
+      y: "50%"
+    },
+    enter: {
+      opacity: 1,
+      y: "0%",
+      transition
+    },
+    exit: {
+      opacity: 0,
+      y: "50%",
+      transition
+    }
   }
 };

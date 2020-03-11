@@ -15,6 +15,7 @@ const getAge = () => {
   );
 };
 
+const sectionName = "p-basic";
 const slideInFromRight = getSectionVariants(GlobalVariants.slideInFromRight);
 const slideInFromLeft = getSectionVariants(GlobalVariants.slideInFromLeft);
 
@@ -23,18 +24,24 @@ const stagger = {
   delayChildren: 0.3
 };
 
-const BasicInfoSection = ({ controls }) => (
+const BasicInfoSection = ({ sectionAnimationControl  }) => (
   <>
     <motion.div className="p-basic__age" transition={stagger}>
-      <motion.h4 variants={slideInFromLeft} animate={controls}>
+      <motion.h4
+        variants={slideInFromLeft}
+        animate={sectionAnimationControl}
+      >
         AGE
       </motion.h4>
-      <motion.h1 variants={slideInFromLeft} animate={controls}>
+      <motion.h1
+        variants={slideInFromLeft}
+        animate={sectionAnimationControl}
+      >
         {getAge()}
       </motion.h1>
       <motion.span
         variants={slideInFromRight}
-        animate={controls}
+        animate={sectionAnimationControl}
       >
         YRS
       </motion.span>
@@ -45,10 +52,16 @@ const BasicInfoSection = ({ controls }) => (
       style={{ gridArea: "nationality" }}
       transition={stagger}
     >
-      <motion.h4 variants={slideInFromRight} animate={controls}>
+      <motion.h4
+        variants={slideInFromRight}
+        animate={sectionAnimationControl}
+      >
         Nationality
       </motion.h4>
-      <motion.h1 variants={slideInFromRight} animate={controls}>
+      <motion.h1
+        variants={slideInFromRight}
+        animate={sectionAnimationControl}
+      >
         KENYA
       </motion.h1>
     </motion.div>
@@ -58,10 +71,16 @@ const BasicInfoSection = ({ controls }) => (
       style={{ gridArea: "exp" }}
       transition={stagger}
     >
-      <motion.h4 variants={slideInFromRight} animate={controls}>
+      <motion.h4
+        variants={slideInFromRight}
+        animate={sectionAnimationControl}
+      >
         Experience
       </motion.h4>
-      <motion.h1 variants={slideInFromRight} animate={controls}>
+      <motion.h1
+        variants={slideInFromRight}
+        animate={sectionAnimationControl}
+      >
         2 YEARS
       </motion.h1>
     </motion.div>
@@ -71,13 +90,16 @@ const BasicInfoSection = ({ controls }) => (
       style={{ gridArea: "signs" }}
       transition={stagger}
     >
-      <motion.h4 variants={slideInFromRight} animate={controls}>
+      <motion.h4
+        variants={slideInFromRight}
+        animate={sectionAnimationControl}
+      >
         Signs
       </motion.h4>
       <motion.div
         className="p-basic__signs"
         variants={slideInFromRight}
-        animate={controls}
+        animate={sectionAnimationControl}
       >
         <span className="cancer-icon" />
         <span className="rat-icon" />
@@ -86,11 +108,8 @@ const BasicInfoSection = ({ controls }) => (
   </>
 );
 
-export default (props) => {
-  const { scrollY } = props;
-  return (
-    <Section className='p-basic' scrollY={scrollY}>
-      <BasicInfoSection {...props}/>
-    </Section>
-  );
-};
+export default ({ scrollY }) => (
+  <Section className={sectionName} scrollY={scrollY} sectionTitle="Who am I?">
+    <BasicInfoSection />
+  </Section>
+);

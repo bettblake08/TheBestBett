@@ -5,21 +5,35 @@ $ju-primary: #017a39;
 .p-education {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 45rem;
   float: left;
-  margin-top: 50vh;
+
+  &__image {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    object-position: center;
+    object-fit: cover;
+
+    img {
+      min-width: 100%;
+      height: 100%;
+    }
+  }
 
   &__info {
     background-color: $ju-primary;
     position: absolute;
     z-index: 30;
     width: 70%;
-    left: 15%;
-    box-shadow: $box-shadow-light;
+    height: 100%;
+    right: 0;
 
     &__left {
       width: 50%;
-      float: right;
+      float: left;
       min-height: 50vh;
       margin-left: 25%;
 
@@ -79,11 +93,11 @@ $ju-primary: #017a39;
   &__logo {
     position: absolute;
     z-index: 50;
-    top: 50rem;
+    top: 60rem;
     width: 30rem;
     height: 30rem;
     padding: 5rem;
-    margin-left: 25%;
+    margin-left: 20%;
     background-color: $color-primary-white;
     box-shadow: $box-shadow-light;
 

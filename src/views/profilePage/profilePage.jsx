@@ -4,6 +4,7 @@ import SlidingPage from "../../components/slidingPage/slidingPage";
 import LandingSection from "./landingSection";
 import BasicInfoSection from "./basicInfoSection";
 import EducationSection from "./educationSection";
+import SkillsSection from "./skillsSection";
 import Background from "./background";
 
 import "./profilePage.scss";
@@ -12,6 +13,8 @@ export default () => {
   const [scrollY, setScrollY] = useState(0);
 
   const onScroll = e => {
+    if (!e.target.classList.contains("page__view")) return;
+
     const offsetTop = e.target.scrollTop;
     setScrollY(e.target.scrollTop);
     let layers = document.querySelectorAll("[data-type='parallax']");
@@ -35,10 +38,13 @@ export default () => {
       className="profile-page"
       onScroll={onScroll}
     >
-      <Background scrollY={scrollY} />
-      <LandingSection scrollY={scrollY} />
-      <BasicInfoSection scrollY={scrollY} />
-      <EducationSection scrollY={scrollY} />
+      <Background scrollY={scrollY}/>
+      <div className="profile-page__content">
+        <LandingSection scrollY={scrollY} />
+        <BasicInfoSection scrollY={scrollY} />
+        <EducationSection scrollY={scrollY} />
+        <SkillsSection scrollY={scrollY} />
+      </div>
     </SlidingPage>
   );
 };

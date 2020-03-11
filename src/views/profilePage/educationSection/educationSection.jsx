@@ -7,20 +7,23 @@ import { getSectionVariants } from "../helper";
 import me from "../../../me";
 
 import JULogo from "../../../assets/images/Jiangsu_University_logo.png";
+import JUImage from "../../../assets/images/ju.jpg";
 import "./educationSection.scss";
 
 const slideInFromRight = getSectionVariants(GlobalVariants.slideInFromRight);
 
-const EducationSection = ({ controls }) => {
+const EducationSection = ({ sectionAnimationControl  }) => {
   const [components, setComponents] = useState({});
-
   return (
     <>
+      <div className="p-education__image">
+        <img src={JUImage} alt="Jiangsu University" />
+      </div>
       <div className="p-education__info">
         <motion.div
           className="p-education__info__left"
           variants={slideInFromRight}
-          animate={controls}
+          animate={sectionAnimationControl}
         >
           <h4>{me.education.bachelors.year}</h4>
           <h1>{me.education.bachelors.major}</h1>
@@ -46,10 +49,14 @@ const EducationSection = ({ controls }) => {
       </div>
     </>
   );
-}
+};
 
 export default props => (
-  <Section className="p-education" scrollY={props.scrollY}>
+  <Section
+    className="p-education"
+    scrollY={props.scrollY}
+    sectionTitle="Education"
+  >
     <EducationSection />
   </Section>
 );

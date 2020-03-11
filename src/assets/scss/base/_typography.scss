@@ -37,12 +37,12 @@
     @include global_text_props;
     &--2 {
       font-family: $font-secondary;
-      font-size: 3rem;
+      font-size: 2.6rem;
       @include global_text_props;
     }
     &--3 {
       font-family: $font-secondary;
-      font-size: 2.6rem;
+      font-size: 2.2rem;
       @include global_text_props;
     }
   }
