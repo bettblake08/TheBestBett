@@ -5,7 +5,6 @@ import Profile from "../../../me";
 export default ({ index }) => {
   return (
     <ContactSection {...Profile.socials.github} index={index}>
-      <p>Test description</p>
     </ContactSection>
   );
 };

@@ -6,6 +6,7 @@ import SlidingPage from "../../components/slidingPage/slidingPage";
 import profile from "../../me";
 import HeaderContext from "../../app/context";
 import GlobalVariants from "../../utilities/globalVariants";
+import Button from "../../components/button";
 
 import "./workPage.scss";
 
@@ -17,30 +18,51 @@ const variants = {
   "preview-end": GlobalVariants.slideInFromLeft.exit
 };
 
-const WorkPreview = ({ work, controls }) => (
-  <div className="work-preview">
-    <div className="work-preview__image">
-      <img src={work.image} alt={work.title} />
+const WorkPreview = ({ work, controls }) => {
+  const [components, setComponents] = useState({});
+
+  return (
+    <div className="work-preview">
+      <div className="work-preview__image">
+        <img src={work.image} alt={work.title} />
+      </div>
+      <div className="work-preview__fade"></div>
+      <div className="work-preview__details">
+        <motion.div
+          className="work-preview__title font--subtitle"
+          variants={variants}
+          animate={controls}
+        >
+          {work.title}
+        </motion.div>
+        <motion.div
+          className="work-preview__body font--normal"
+          variants={variants}
+          animate={controls}
+        >
+          {work.description}
+        </motion.div>
+        <motion.div
+          className="work-preview__button"
+          animate={controls}
+          variants={variants}
+        >
+          <Button
+            defaultStatus={0}
+            parent={{ components, setComponents }}
+            name="contactButton"
+            config={{
+              icon: "arrow-right",
+              label: "Check it out",
+              action: () => window.open(work.url, "_blank"),
+              reverse: true
+            }}
+          />
+        </motion.div>
+      </div>
     </div>
-    <div className="work-preview__fade"></div>
-    <div className="work-preview__details">
-      <motion.div
-        className="work-preview__title font--subtitle"
-        variants={variants}
-        animate={controls}
-      >
-        {work.title}
-      </motion.div>
-      <motion.div
-        className="work-preview__body font--normal"
-        variants={variants}
-        animate={controls}
-      >
-        {work.description}
-      </motion.div>
-    </div>
-  </div>
-);
+  );
+};
 
 export default () => {
   const [isGalleryExpanded, setIsGalleryExpanded] = useState(false);
@@ -54,14 +76,14 @@ export default () => {
   const headerContext = useContext(HeaderContext);
 
   const setSelectedWork = async selectedWork => {
-    await controls.start('preview-end');
+    await controls.start("preview-end");
     setStore({ ...store, selectedWork });
 
     if (isGalleryExpanded) {
       setIsGalleryExpanded(!isGalleryExpanded);
       headerContext.toggleLogoVisibility();
     }
-    await controls.start('preview-start')
+    await controls.start("preview-start");
   };
 
   return (
@@ -77,7 +99,7 @@ export default () => {
               headerContext.toggleLogoVisibility();
             }}
           ></div>
-          <WorkPreview work={store.selectedWork} controls={controls}/>
+          <WorkPreview work={store.selectedWork} controls={controls} />
         </div>
         <div
           className="work-page__gallery"

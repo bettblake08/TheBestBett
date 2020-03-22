@@ -24,6 +24,7 @@ $ju-primary: #017a39;
   }
 
   &__info {
+    background-image: url("../../../assets/images/circuit-board.svg");
     background-color: $ju-primary;
     position: absolute;
     z-index: 30;

@@ -69,7 +69,7 @@
       height: 15vh;
       position: fixed;
       z-index: 50;
-      background-image: linear-gradient(to top, #CCCCCC00, #ffffff 50%);
+      background-image: linear-gradient(to top, #cccccc00, #ffffff 50%);
     }
   }
 
@@ -131,5 +131,15 @@
 
   &__body {
     color: $color-primary-white;
+    padding-right: 5rem;
+  }
+
+  &__button {
+    float: left;
+    width: 20rem;
+    height: 5rem;
+    position: relative;
+    margin-top: 3rem;
+    overflow: hidden;
   }
 }

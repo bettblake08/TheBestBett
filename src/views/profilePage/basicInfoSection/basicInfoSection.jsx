@@ -109,7 +109,7 @@ const BasicInfoSection = ({ sectionAnimationControl  }) => (
 );
 
 export default ({ scrollY }) => (
-  <Section className={sectionName} scrollY={scrollY} sectionTitle="Who am I?">
+  <Section className={sectionName} scrollY={scrollY} sectionTitle="Basic Information">
     <BasicInfoSection />
   </Section>
 );

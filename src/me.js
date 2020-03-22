@@ -1,4 +1,5 @@
 import image from "./assets/images/landing-page.jpg";
+import neoUiImage from "./assets/images/neo-ui.png";
 
 export default {
   name: {
@@ -15,45 +16,11 @@ export default {
   projects: [
     {
       id: 1,
-      title: "The Wither",
-      image: "https://picsum.photos/id/237/1600/800",
-      description: "This is a basic example of a description"
-    },
-    {
-      id: 2,
-      title: "Batman",
-      image: "https://picsum.photos/id/238/1600/800",
-      description: "This is a basic example of a description"
-    },
-    {
-      id: 3,
-      title: "Johnny Walker",
-      image: "https://picsum.photos/id/239/1600/800",
-      description: "This is a basic example of a description"
-    },
-    {
-      id: 4,
-      title: "John Wick",
-      image: "https://picsum.photos/id/267/1600/800",
-      description: "This is a basic example of a description"
-    },
-    {
-      id: 5,
-      title: "The expendables",
-      image: "https://picsum.photos/id/297/1600/800",
-      description: "This is a basic example of a description"
-    },
-    {
-      id: 6,
-      title: "Rodrick",
-      image: "https://picsum.photos/id/537/1600/800",
-      description: "This is a basic example of a description"
-    },
-    {
-      id: 7,
-      title: "Project 2",
-      image: "https://picsum.photos/id/217/1600/800",
-      description: "This is a basic example of a description"
+      title: "Neo UI",
+      image: neoUiImage,
+      description:
+        "This is a collection of React UI components personally developed. The documentation is maintained using the storybook documentation library.",
+      url: "https://neo-ui-react.netlify.com"
     }
   ],
   socials: {
@@ -92,7 +59,7 @@ export default {
       year: 2017,
       major: "Computer Science And Technology",
       level: "Bachelor's Degree Graduate",
-      homepage: ""
+      homepage: "http://oec.ujs.edu.cn/"
     }
   }
 };

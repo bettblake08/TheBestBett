@@ -37,8 +37,7 @@ const EducationSection = ({ sectionAnimationControl  }) => {
               config={{
                 icon: "arrow-right",
                 label: "Visit the homepage",
-                action: () =>
-                  (window.location.href = me.education.bachelors.homepage)
+                action: () => window.open(me.education.bachelors.homepage, '_blank')
               }}
             />
           </div>
