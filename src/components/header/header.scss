@@ -12,13 +12,25 @@
     width: 2rem;
     height: 4rem;
     margin-right: 1rem;
-    color: $color-secondary;
     position: relative;
+    color: $color-primary-white;
     opacity: 0;
+    @include transition-quick();
 
     @include respond(tab-port) {
       opacity: 1;
       width: 4rem;
+    }
+
+    &.dark {
+      color: $color-secondary;
+    }
+
+    .page--selector-visible & {
+      color: $color-secondary;
+      &.dark {
+        color: $color-primary;
+      }
     }
   }
 
@@ -27,7 +39,7 @@
     width: auto;
     height: 4rem;
     @include transition-quick;
-    
+
     &--hidden {
       opacity: 0;
       visibility: hidden;
@@ -35,7 +47,7 @@
 
     @include respond(tab-port) {
       height: 4.5rem;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
 
     img {

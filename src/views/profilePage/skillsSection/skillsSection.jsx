@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Section from "../section";
 import GlobalVariants from "../../../utilities/globalVariants";
 import { getSectionVariants } from "../helper";
+import { isScreenMobile } from "../../../utilities/helpers";
+
 import "./skillsSection.scss";
 
 const SkillsSectionContext = React.createContext({});
@@ -60,7 +62,7 @@ const TechStackSkillCard = () => (
     title="Tech Stack"
     skills={["PHP", "Javascript", "Python"]}
     id="tech-stack"
-    variants={slideInFromLeft}
+    variants={isScreenMobile() ? slideInFromBottom : slideInFromLeft}
   >
     <h2 className="font--header--2">Languages</h2>
     <SkillItem name="PHP" />
@@ -108,7 +110,7 @@ const SoftSkillCard = () => (
     title="Soft Skills"
     skills={["Leadership", "Communication", "Pro-active"]}
     id="soft-skills"
-    variants={slideInFromRight}
+    variants={isScreenMobile() ? slideInFromBottom : slideInFromRight}
   >
     <h2 className="font--header--2">Team Skills</h2>
     <SkillItem name="Leadership" />

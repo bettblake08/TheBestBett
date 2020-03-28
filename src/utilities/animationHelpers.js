@@ -16,28 +16,42 @@ const defaultVariants = {
   }
 };
 
-export const letterAnimation = (word, variants = {}) => {
-  let hasSpace = false;
-  return Array.from(word).map((letter, index) => {
-    if (letter === " ") {
-      hasSpace = true;
-      return null;
-    }
 
-    const style = { float: "left", marginLeft: hasSpace ? "1rem" : 0 };
-    hasSpace = false;
+const generateWord = (word, variants) =>
+  Array.from(word).map((letter, index) => {
+    if (letter === " ") return null;
 
     return (
       <motion.span
         key={index}
         variants={{ ...defaultVariants, ...variants }}
         whileHover="hover"
-        style={style}
       >
         {letter}
       </motion.span>
     );
   });
+
+export const letterAnimation = (text, variants = {}) => {
+  let newWord = [];
+  let result = [];
+  const style = { float: "left" };
+
+  Array.from(text).forEach(letter => {
+    if (letter === " ") {
+      result.push(<span style={style}> {generateWord(newWord, variants)} </span>);
+      result.push(<span style={style}>&nbsp;</span>);
+      newWord = [];
+    } else {
+      newWord.push(letter);
+    }
+  })
+
+  if (newWord.length > 0) {
+    result.push(<span style={style}> {generateWord(newWord, variants)} </span>);
+  }
+
+  return result;
 };
 
 /**

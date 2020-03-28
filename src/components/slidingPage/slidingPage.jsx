@@ -1,11 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useLocation, useHistory } from "react-router-dom";
 import Header from "../header";
 
 const transitionPaceReducer = 3;
-
-const pages = ["/", "/profile", "/work"];
 
 const boxShadow = "0rem 0.1rem 4rem -1.5rem #000 inset";
 const mainPageConfig = {
@@ -75,30 +72,11 @@ const viewVariants = {
 
 const SlidingPage = props => {
   const { children, className, onScroll = () => {} } = props;
-  const location = useLocation();
-  const history = useHistory();
 
   return (
     <>
       <div className="page__selector"></div>
-      <motion.div
-        {...mainPageConfig}
-        className="page__window"
-        onPan={(event, info) => {
-          if (info.delta.y > 10) {
-            const pageIndex = pages.findIndex(
-              page => page === location.pathname
-            );
-            if (pageIndex + 1 !== pages.length)
-              history.push(pages[pageIndex + 1]);
-          } else if (info.delta.y < -10) {
-            const pageIndex = pages.findIndex(
-              page => page === location.pathname
-            );
-            if (pageIndex !== 0) history.push(pages[pageIndex - 1]);
-          }
-        }}
-      >
+      <motion.div {...mainPageConfig} className="page__window">
         <motion.div
           variants={viewVariants}
           className={`page__view ${className}`}

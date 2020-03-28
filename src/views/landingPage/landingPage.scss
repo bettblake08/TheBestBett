@@ -1,4 +1,5 @@
 @import "../../assets/scss/abstract/variables";
+@import "../../assets/scss/abstract/mixins";
 
 .landing-page {
   float: left;
@@ -21,12 +22,30 @@
     bottom: 0;
     right: 10%;
     height: 90vh;
-    object-fit: cover;
-    object-position: center;
-
     img {
       min-height: 100%;
       filter: drop-shadow(-5rem -1rem 2rem #00000060) !important;
+    }
+  }
+
+  @include respond(tab-port) {
+    &__picture {
+      right: 0;
+    }
+  }
+
+  @include respond(tab-land) {
+    &__info {
+      margin: 15vh 0 0 5%;
+      padding: 5rem;
+      width: 90%;
+    }
+
+    &__picture {
+      height: 55vh;
+      width: 65vw;
+      right: 0;
+      top: 50vh;
     }
   }
 }
@@ -41,7 +60,7 @@
     &__name {
       font-size: 7rem;
       color: $color-primary-white;
-      margin: .5rem 0 0 0;
+      margin: 0.5rem 0 0 0;
       float: left;
       width: 100%;
     }
@@ -49,7 +68,7 @@
     &__greeting {
       font-size: 2.5rem;
       color: $color-primary-white;
-      margin: 0 0 .5rem 0;
+      margin: 0 0 0.5rem 0;
       float: left;
     }
   }
@@ -61,6 +80,10 @@
     position: relative;
     margin-top: 3rem;
     overflow: hidden;
+
+    @include respond(phone) {
+      width: 22rem;
+    }
   }
 
   &__job {

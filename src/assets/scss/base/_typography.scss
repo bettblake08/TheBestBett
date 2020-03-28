@@ -50,6 +50,10 @@
     font-family: $font-secondary;
     font-size: 2rem;
     text-align: left;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
   }
   &--button {
     font-size: 1.2rem;

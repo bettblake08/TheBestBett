@@ -1,4 +1,5 @@
 @import "../../../assets/scss/abstract/variables";
+@import "../../../assets/scss/abstract/mixins";
 
 .p-basic {
     padding: 10rem 20%;
@@ -11,6 +12,10 @@
       "age . exp"
       ". . signs";
     background-color: $color-secondary;
+
+    @include respond(phone) {
+      padding: 10rem 10%;
+    }
 
     &__age {
       grid-area: age;

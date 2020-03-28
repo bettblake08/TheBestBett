@@ -11,18 +11,22 @@ import "./header.scss";
 
 const headerStyleConfig = {
   "/": {
+    isPageSelectorToggleDark: false,
     isLogoDark: false,
     isSocialDark: false
   },
   "/profile": {
+    isPageSelectorToggleDark: true,
     isLogoDark: true,
     isSocialDark: true
   },
   "/work": {
+    isPageSelectorToggleDark: false,
     isLogoDark: false,
     isSocialDark: true
   },
   "/contact": {
+    isPageSelectorToggleDark: false,
     isLogoDark: false,
     isSocialDark: false
   }
@@ -58,7 +62,9 @@ const Header = () => {
       {value => (
         <div className="header">
           <motion.div
-            className="header__page-selector-toggle"
+            className={`header__page-selector-toggle ${
+              style.isPageSelectorToggleDark ? 'dark' : ''
+            }`}
             onClick={value.togglePageSelector}
           >
             <i className="fas fa-bars fa-3x center"></i>

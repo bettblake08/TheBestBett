@@ -1,4 +1,5 @@
 @import "../../../assets/scss/abstract/variables";
+@import "../../../assets/scss/abstract/mixins";
 
 $ju-primary: #017a39;
 
@@ -7,6 +8,11 @@ $ju-primary: #017a39;
   width: 100%;
   height: 45rem;
   float: left;
+  overflow: hidden;
+
+  @include respond(phone) {
+    height: 50rem;
+  }
 
   &__image {
     width: 50%;
@@ -16,6 +22,10 @@ $ju-primary: #017a39;
     left: 0;
     object-position: center;
     object-fit: cover;
+
+    @include respond(phone) {
+      width: 100%;
+    }
 
     img {
       min-width: 100%;
@@ -37,6 +47,11 @@ $ju-primary: #017a39;
       float: left;
       min-height: 50vh;
       margin-left: 25%;
+
+      @include respond(phone) {
+        margin-left: 10%;
+        width: 80%;
+      }
 
       h4 {
         color: $color-grey-light;
@@ -68,6 +83,10 @@ $ju-primary: #017a39;
       position: relative;
       margin-top: 3rem;
       float: left;
+
+      @include respond(phone) {
+        width: 30rem;
+      }
 
       .button {
         &--normal {
@@ -101,6 +120,15 @@ $ju-primary: #017a39;
     margin-left: 20%;
     background-color: $color-primary-white;
     box-shadow: $box-shadow-light;
+
+    @include respond(tab-port) {
+      width: 25rem;
+      height: 25rem;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
 
     img {
       width: 100%;
