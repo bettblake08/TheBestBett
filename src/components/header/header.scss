@@ -5,17 +5,37 @@
   position: absolute;
   z-index: 500;
   width: 100%;
-  padding: 2rem 10% 2rem 5rem;
+  padding: 2rem 10% 2rem 2rem;
+
+  &__page-selector-toggle {
+    float: left;
+    width: 2rem;
+    height: 4rem;
+    margin-right: 1rem;
+    color: $color-secondary;
+    position: relative;
+    opacity: 0;
+
+    @include respond(tab-port) {
+      opacity: 1;
+      width: 4rem;
+    }
+  }
 
   &__logo {
+    float: left;
     width: auto;
     height: 4rem;
-    float: left;
     @include transition-quick;
     
     &--hidden {
       opacity: 0;
       visibility: hidden;
+    }
+
+    @include respond(tab-port) {
+      height: 4.5rem;
+      margin-left: .5rem;
     }
 
     img {

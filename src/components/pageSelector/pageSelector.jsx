@@ -132,10 +132,12 @@ const PageSelector = () => {
       exit="exit"
       variants={selectorVariants}
     >
-      <PageOption label="Home" icon="user" url="/" />
-      <PageOption label="Profile" icon="address-card" url="/profile" />
-      <PageOption label="Work" icon="folder-open" url="/work" />
-      <PageOption label="Contact" icon="comment" url="/contact" />
+      <div className="page-options__content">
+        <PageOption label="Home" icon="user" url="/" />
+        <PageOption label="Profile" icon="address-card" url="/profile" />
+        <PageOption label="Work" icon="folder-open" url="/work" />
+        <PageOption label="Contact" icon="comment" url="/contact" />
+      </div>
     </motion.div>
   );
 };

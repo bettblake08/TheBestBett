@@ -6,12 +6,19 @@ $p-button-name: ".p-button";
 .page-options {
   position: fixed;
   z-index: 999;
-  transform: translateY(-50%);
-  top: 50%;
-  left: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 100vh;
+  width: 15rem;
+  @include transition-quick();
+
+  &__content {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   &--dark &__option #{$p-button-name}__icon {
     color: $color-primary;
@@ -20,6 +27,14 @@ $p-button-name: ".p-button";
 
   &--dark &__option--selected #{$p-button-name}__icon {
     color: $color-primary-white;
+  }
+
+  @include respond(tab-port) {
+    left: -15rem;
+  }
+
+  .page--selector-visible & {
+    left: 0;
   }
 }
 

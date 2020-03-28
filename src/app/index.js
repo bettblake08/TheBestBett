@@ -16,6 +16,9 @@ import ContactPage from "../views/contactPage";
 const storeDefault = {
   header: {
     isLogoHidden: false
+  },
+  pageSelector: {
+    isVisible: window.clientWidth < 800
   }
 };
 
@@ -41,16 +44,24 @@ export default () => {
   const [store, setStore] = useState(storeDefault);
 
   return (
-    <div className="page">
+    <div className={`page ${ store.pageSelector.isVisible ? 'page--selector-visible' : ''}`}>
       <Router>
-        <AppContext.Provider value={{
-          ...store,
-          toggleLogoVisibility: () => {
-            let updatedStore = { ...store };
-            updatedStore.header.isLogoHidden = !store.header.isLogoHidden;
-            setStore(updatedStore);
-          }
-        }}>
+        <AppContext.Provider
+          value={{
+            ...store,
+            toggleLogoVisibility: () => {
+              let updatedStore = { ...store };
+              updatedStore.header.isLogoHidden = !store.header.isLogoHidden;
+              setStore(updatedStore);
+            },
+            togglePageSelector: () => {
+              let updatedStore = { ...store };
+              updatedStore.pageSelector.isVisible = !store.pageSelector
+                .isVisible;
+              setStore(updatedStore);
+            }
+          }}
+        >
           <Pages />
         </AppContext.Provider>
       </Router>

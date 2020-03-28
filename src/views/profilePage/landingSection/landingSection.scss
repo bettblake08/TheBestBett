@@ -1,8 +1,9 @@
 @import "../../../assets/scss/abstract/variables";
+@import "../../../assets/scss/abstract/mixins";
 
 .p-landing {
     padding: 25vh 5%;
-    width: 70%;
+    width: 80%;
     height: 100vh;
     float: left;
     margin-left: 15%;
@@ -12,6 +13,11 @@
       "picture first-text"
       "picture second-text"
       "third-text third-text";
+
+    @include respond(tab-port) {
+      width: 90%;
+      margin-left: 5%;
+    }
 
     &__greeting-image {
       grid-area: picture;

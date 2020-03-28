@@ -58,6 +58,12 @@ const Header = () => {
       {value => (
         <div className="header">
           <motion.div
+            className="header__page-selector-toggle"
+            onClick={value.togglePageSelector}
+          >
+            <i className="fas fa-bars fa-3x center"></i>
+          </motion.div>
+          <motion.div
             className={`header__logo ${
               value.header.isLogoHidden ? "header__logo--hidden" : ""
             }`}

@@ -7,7 +7,7 @@ const transitionPaceReducer = 3;
 
 const pages = ["/", "/profile", "/work"];
 
-const boxShadow = "0rem 0.1rem 4rem -1.5rem #000 inset"
+const boxShadow = "0rem 0.1rem 4rem -1.5rem #000 inset";
 const mainPageConfig = {
   initial: "page-initial",
   animate: "page-in",
