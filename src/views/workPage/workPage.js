@@ -4,11 +4,13 @@ import WorkCollection from "./collection";
 import WorkPageContext from "./workPageContext";
 import SlidingPage from "../../components/slidingPage/slidingPage";
 import profile from "../../me";
-import HeaderContext from "../../app/context";
+import AppContext from "../../app/context";
 import GlobalVariants from "../../utilities/globalVariants";
 import Button from "../../components/button";
+import { isScreenMobile } from "../../utilities/helpers";
 
 import "./workPage.scss";
+import { useEffect } from "react";
 
 const variants = {
   "page-initial": GlobalVariants.slideInFromLeft.initial,
@@ -65,7 +67,7 @@ const WorkPreview = ({ work, controls }) => {
 };
 
 export default () => {
-  const [isGalleryExpanded, setIsGalleryExpanded] = useState(false);
+  const [isGalleryExpanded, setIsGalleryExpanded] = useState(!isScreenMobile());
   const [scrollY, setScrollY] = useState(0);
   const controls = useAnimation();
   const [store, setStore] = useState({
@@ -73,31 +75,31 @@ export default () => {
     selectedWork: { ...profile.projects[0], group: "Projects" }
   });
 
-  const headerContext = useContext(HeaderContext);
+  const appContext = useContext(AppContext);
 
   const setSelectedWork = async selectedWork => {
     await controls.start("preview-end");
     setStore({ ...store, selectedWork });
-
-    if (isGalleryExpanded) {
-      setIsGalleryExpanded(!isGalleryExpanded);
-      headerContext.toggleLogoVisibility();
-    }
+    setIsGalleryExpanded(true);
     await controls.start("preview-start");
   };
 
+  useEffect(() => {
+    appContext.toggleLogoVisibility(isGalleryExpanded ? "show" : "hide");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isGalleryExpanded]);
+
   return (
-    <SlidingPage className={`work-page${isGalleryExpanded ? "--expand" : ""}`}>
+    <SlidingPage
+      className={`work-page${!isGalleryExpanded ? "--collapsed" : ""}`}
+    >
       <WorkPageContext.Provider value={{ ...store, setSelectedWork }}>
         <div className="work-page__preview">
           <div
             className={`work-page__back-btn fas fa-arrow-${
-              isGalleryExpanded ? "right" : "left"
+              !isGalleryExpanded ? "right" : "left"
             } fa-2x`}
-            onClick={() => {
-              setIsGalleryExpanded(!isGalleryExpanded);
-              headerContext.toggleLogoVisibility();
-            }}
+            onClick={() => setIsGalleryExpanded(!isGalleryExpanded)}
           ></div>
           <WorkPreview work={store.selectedWork} controls={controls} />
         </div>

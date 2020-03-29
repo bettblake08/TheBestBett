@@ -49,9 +49,15 @@ export default () => {
         <AppContext.Provider
           value={{
             ...store,
-            toggleLogoVisibility: () => {
+            toggleLogoVisibility: (state = '') => {
               let updatedStore = { ...store };
-              updatedStore.header.isLogoHidden = !store.header.isLogoHidden;
+
+              switch (state) {
+                case "show": updatedStore.header.isLogoHidden = false; break;
+                case "hide": updatedStore.header.isLogoHidden = true; break;
+                default: updatedStore.header.isLogoHidden = !store.header.isLogoHidden;
+              }
+              
               setStore(updatedStore);
             },
             togglePageSelector: () => {

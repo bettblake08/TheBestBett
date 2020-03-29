@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { isScreenMobile } from "../../utilities/helpers";
+import AppContext from "../../app/context";
 import "./pageSelector.scss";
+import { isScreenMobile } from "../../utilities/helpers";
 
 const darkConfig = {
   "/": false,
@@ -16,11 +17,11 @@ const optionVariants = {
     opacity: 0,
     transform: "translateX(-5rem) scale(0.6)"
   },
-  "entrance": {
+  entrance: {
     opacity: 1,
     transform: "translateX(0) scale(1)"
   },
-  "exit": {
+  exit: {
     opacity: 0
   }
 };
@@ -69,19 +70,22 @@ const outerRingVariant = {
   }
 };
 
-
 const PageOption = ({ label, icon, url }) => {
   const location = useLocation();
+  const appContext = useContext(AppContext);
+  const linkOnClick = () => {
+    if (isScreenMobile()) {
+      appContext.togglePageSelector();
+    }
+  };
 
   return (
     <motion.div
-      className={`p-button${
-        location.pathname === url ? "--selected" : ""
-      }`}
+      className={`p-button${location.pathname === url ? "--selected" : ""}`}
       variants={optionVariants}
       whileHover="hover"
     >
-      <Link to={url}>
+      <Link to={url} onClick={linkOnClick}>
         <motion.svg
           whileHover="hover"
           variants={innerRingVariant}
@@ -111,7 +115,7 @@ const PageOption = ({ label, icon, url }) => {
           />
         </motion.svg>
         <div className="p-button__icon">
-          <i className={`far fa-${icon} fa-${isScreenMobile() ? '3' : '2'}x center`} />
+          <i className={`far fa-${icon} fa-2x center`} />
         </div>
         <label>
           <span className="font--normal">{label}</span>
