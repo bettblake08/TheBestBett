@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { isScreenMobile } from "../../utilities/helpers";
 import "./pageSelector.scss";
 
 const darkConfig = {
@@ -110,10 +111,10 @@ const PageOption = ({ label, icon, url }) => {
           />
         </motion.svg>
         <div className="p-button__icon">
-          <i className={`far fa-${icon} fa-2x`} />
+          <i className={`far fa-${icon} fa-${isScreenMobile() ? '3' : '2'}x center`} />
         </div>
         <label>
-          <span>{label}</span>
+          <span className="font--normal">{label}</span>
         </label>
       </Link>
     </motion.div>
@@ -132,7 +133,7 @@ const PageSelector = () => {
       exit="exit"
       variants={selectorVariants}
     >
-      <div className="page-options__content">
+      <div className="page-options__content center">
         <PageOption label="Home" icon="user" url="/" />
         <PageOption label="Profile" icon="address-card" url="/profile" />
         <PageOption label="Work" icon="folder-open" url="/work" />

@@ -11,10 +11,6 @@ $p-button-name: ".p-button";
   @include transition-quick();
 
   &__content {
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    left: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,13 +44,11 @@ $p-button-name: ".p-button";
     @include transition-quick();
 
     label {
-      font-family: $font-primary;
       color: $color-primary-white;
-      width: 5rem;
-      height: 5rem;
+      width: 100%;
+      height: 100%;
       line-height: 5rem;
       overflow: hidden;
-      font-size: 2rem;
       position: absolute;
       z-index: 49;
       visibility: hidden;
@@ -70,6 +64,23 @@ $p-button-name: ".p-button";
         background-color: $color-grey-dark-fade;
         padding-left: 7rem;
         visibility: visible;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 8rem;
+      height: 8rem;
+      margin: 2rem 0;
+
+      label {
+        line-height: 8rem;
+        padding-left: 8rem;
+      }
+
+      &:hover label {
+        padding-left: 12rem;
+        padding-right: 5rem;
+        width: 25rem;
       }
     }
   }
@@ -103,11 +114,7 @@ $p-button-name: ".p-button";
     @include transition-quick();
 
     i {
-      width: 100%;
-      height: 100%;
-      text-align: center;
       color: $color-primary-white;
-      line-height: 5rem;
     }
   }
 
