@@ -5,7 +5,15 @@
   position: absolute;
   z-index: 500;
   width: 100%;
-  padding: 2rem 10% 2rem 2rem;
+  height: 10vh;
+
+  &__content {
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    padding: 0 10% 0 2rem;
+  }
 
   &__page-selector-toggle {
     float: left;

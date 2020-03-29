@@ -61,31 +61,33 @@ const Header = () => {
     <AppContext.Consumer>
       {value => (
         <div className="header">
-          <motion.div
-            className={`header__page-selector-toggle ${
-              style.isPageSelectorToggleDark ? 'dark' : ''
-            }`}
-            onClick={value.togglePageSelector}
-          >
-            <i className="fas fa-bars fa-3x center"></i>
-          </motion.div>
-          <motion.div
-            className={`header__logo ${
-              value.header.isLogoHidden ? "header__logo--hidden" : ""
-            }`}
-          >
-            <img
-              src={style.isLogoDark ? LogoDark : Logo}
-              alt="TheBestBett logo"
-            />
-          </motion.div>
-          <div
-            className={`header__socials${style.isSocialDark ? "--dark" : ""}`}
-          >
-            <SocialLink {...Profile.socials.facebook} />
-            <SocialLink {...Profile.socials.twitter} />
-            <SocialLink {...Profile.socials.linkedin} />
-            <SocialLink {...Profile.socials.github} />
+          <div className="header__content">
+            <motion.div
+              className={`header__page-selector-toggle ${
+                style.isPageSelectorToggleDark ? "dark" : ""
+              }`}
+              onClick={value.togglePageSelector}
+            >
+              <i className="fas fa-bars fa-3x center"></i>
+            </motion.div>
+            <motion.div
+              className={`header__logo ${
+                value.header.isLogoHidden ? "header__logo--hidden" : ""
+              }`}
+            >
+              <img
+                src={style.isLogoDark ? LogoDark : Logo}
+                alt="TheBestBett logo"
+              />
+            </motion.div>
+            <div
+              className={`header__socials${style.isSocialDark ? "--dark" : ""}`}
+            >
+              <SocialLink {...Profile.socials.facebook} />
+              <SocialLink {...Profile.socials.twitter} />
+              <SocialLink {...Profile.socials.linkedin} />
+              <SocialLink {...Profile.socials.github} />
+            </div>
           </div>
         </div>
       )}
