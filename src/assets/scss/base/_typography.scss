@@ -50,10 +50,6 @@
     font-family: $font-secondary;
     font-size: 2rem;
     text-align: left;
-
-    @include respond(phone) {
-      font-size: 2.5rem;
-    }
   }
   &--button {
     font-size: 1.2rem;
@@ -102,5 +98,21 @@
   }
   &--right {
     text-align: right;
+  }
+
+  @include respond(phone) {
+    &--normal {
+      font-size: 2.5rem;
+    }
+
+    &--header {
+      font-size: 4rem;
+      &--2 {
+        font-size: 3.2rem;
+      }
+      &--3 {
+        font-size: 2.6rem;
+      }
+    }
   }
 }

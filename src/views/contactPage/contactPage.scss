@@ -4,12 +4,7 @@
 $contact-grid-border: solid 0.1rem #dfdfdf17;
 
 .contact-page {
-  display: grid;
-  grid-template-columns: 10% 90%;
-  grid-template-rows: 10vh 90vh;
-  grid-template-areas:
-    "header header"
-    "view view";
+  width: 100%;
   background-image: $radial-gradient;
 
   &--selected {
@@ -25,14 +20,11 @@ $contact-grid-border: solid 0.1rem #dfdfdf17;
     border-bottom: $contact-grid-border;
   }
 
-  &__page-selector {
-    border-right: $contact-grid-border;
-    grid-area: selector;
-  }
-
   &__contacts {
-    grid-area: view;
-    display: flex;
+    height: 90vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -44,17 +36,26 @@ $contact-grid-border: solid 0.1rem #dfdfdf17;
     border-right: $contact-grid-border;
     padding: 3rem 5rem;
     position: relative;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 30%;
+    }
+
+    @include respond(tab-land) {
+      width: 35%;
+    }
+
+    @include respond(phone) {
+      width: 75%;
+    }
 
     h1 {
-      font-size: 3rem;
       color: $color-primary-white;
-      font-family: $font-primary;
     }
 
     h3 {
-      font-size: 2rem;
       color: $color-secondary;
-      font-family: $font-secondary;
     }
   }
 
@@ -100,9 +101,7 @@ $contact-grid-border: solid 0.1rem #dfdfdf17;
   }
 
   &__number {
-    font-size: 2rem;
     color: $color-primary-white;
-    font-family: $font-secondary;
     padding-bottom: 2rem;
     border-bottom: solid 0.3rem $color-secondary;
     width: 2rem;
@@ -111,14 +110,6 @@ $contact-grid-border: solid 0.1rem #dfdfdf17;
 
   &--selected &__number {
     width: 4rem;
-  }
-
-  &__body {
-    p {
-      color: $color-primary-white;
-      font-family: $font-secondary;
-      font-size: 1.5rem;
-    }
   }
 
   &__icon {

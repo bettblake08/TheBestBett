@@ -49,7 +49,7 @@ const ContactSection = ({
             </div>
 
             <div className="contact-section__details">
-              <div className="contact-section__number">{`0${index}`}</div>
+              <div className="contact-section__number font--normal">{`0${index}`}</div>
               <div className="contact-section__icon">
                 <motion.svg animate="rotate-loop" variants={ringVariants}>
                   <circle
@@ -62,8 +62,8 @@ const ContactSection = ({
                 </motion.svg>
                 <i className={`fab fa-${icon} fa-4x`}></i>
               </div>
-              <h1 className="contact-section__title">{title}</h1>
-              <h3 className="contact-section__handle">{handle}</h3>
+              <h1 className="contact-section__title font--header">{title}</h1>
+              <h3 className="contact-section__handle font--header--3">{handle}</h3>
               {isSelected ? (
                 <div className="contact-section__body">{children}</div>
               ) : null}

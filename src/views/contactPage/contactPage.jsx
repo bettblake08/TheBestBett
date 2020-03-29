@@ -21,7 +21,6 @@ const ContactPage = () => {
         }`}
       >
         <div className="contact-page__header"></div>
-        <div className="contact-page__page-selector"></div>
         <div className="contact-page__contacts">
           <Facebook index={1} />
           <LinkedIn index={2} />
