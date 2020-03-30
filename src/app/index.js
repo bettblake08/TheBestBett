@@ -62,8 +62,8 @@ export default () => {
             },
             togglePageSelector: () => {
               let updatedStore = { ...store };
-              updatedStore.pageSelector.isVisible = !store.pageSelector
-                .isVisible;
+              updatedStore.pageSelector.isVisible = !store.pageSelector.isVisible;
+              updatedStore.header.isLogoHidden = false;
               setStore(updatedStore);
             }
           }}

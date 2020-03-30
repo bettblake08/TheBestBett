@@ -15,29 +15,29 @@
     padding: 0 10% 0 2rem;
   }
 
-  &__page-selector-toggle {
+  &__page-selector-toggle.hamburger {
     float: left;
-    width: 2rem;
-    height: 4rem;
-    margin-right: 1rem;
+    width: 3rem;
     position: relative;
-    color: $color-primary-white;
-    opacity: 0;
-    @include transition-quick();
+    visibility: hidden;
 
     @include respond(tab-port) {
-      opacity: 1;
-      width: 4rem;
+      visibility: visible;
+      width: 6rem;
     }
 
-    &.dark {
-      color: $color-secondary;
-    }
+    padding: 1rem 0;
 
-    .page--selector-visible & {
-      color: $color-secondary;
+    .hamburger-inner {
+      background-color: $color-primary-white !important;
+
+      &::before,
+      &::after {
+        background-color: inherit !important;
+      }
+
       &.dark {
-        color: $color-primary;
+        background-color: $color-secondary !important;
       }
     }
   }

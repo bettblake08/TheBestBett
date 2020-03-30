@@ -62,14 +62,21 @@ const Header = () => {
       {value => (
         <div className="header">
           <div className="header__content">
-            <motion.div
-              className={`header__page-selector-toggle ${
-                style.isPageSelectorToggleDark ? "dark" : ""
+            <div
+              className={`header__page-selector-toggle hamburger hamburger--spin ${
+                value.pageSelector.isVisible ? "is-active" : ""
               }`}
+              type="button"
               onClick={value.togglePageSelector}
             >
-              <i className="fas fa-bars fa-3x center"></i>
-            </motion.div>
+              <span className="hamburger-box">
+                <span
+                  className={`hamburger-inner ${
+                    style.isPageSelectorToggleDark ? "dark" : ""
+                  }`}
+                ></span>
+              </span>
+            </div>
             <motion.div
               className={`header__logo ${
                 value.header.isLogoHidden ? "header__logo--hidden" : ""
