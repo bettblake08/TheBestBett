@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Typed from "typed.js";
 import SlidingPage from "../../components/slidingPage/slidingPage";
 import { letterAnimation } from "../../utilities/animationHelpers";
+import { setPageTitle } from "../../utilities/helpers";
 import GlobalVariants from "../../utilities/globalVariants";
 import Button from "../../components/button";
 import me from "../../me";
@@ -63,6 +64,10 @@ export default () => {
       }, 3000);
     }
   }, [typeRef]);
+
+  useEffect(() => {
+    setPageTitle("Home");
+  }, []);
 
   return (
     <SlidingPage className="landing-page">

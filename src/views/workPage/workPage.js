@@ -7,7 +7,7 @@ import profile from "../../me";
 import AppContext from "../../app/context";
 import GlobalVariants from "../../utilities/globalVariants";
 import Button from "../../components/button";
-import { isScreenMobile } from "../../utilities/helpers";
+import { isScreenMobile, setPageTitle } from "../../utilities/helpers";
 
 import "./workPage.scss";
 import { useEffect } from "react";
@@ -86,6 +86,7 @@ export default () => {
 
   useEffect(() => {
     appContext.toggleLogoVisibility(isGalleryExpanded ? "show" : "hide");
+    setPageTitle("Work");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isGalleryExpanded]);
 

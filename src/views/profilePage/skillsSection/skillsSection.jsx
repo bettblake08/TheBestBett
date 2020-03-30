@@ -53,7 +53,7 @@ const SkillCard = ({ title, skills, id, children, variants }) => (
 
 const SkillItem = ({ name, tags = [] }) => (
   <p className="font--normal">
-    {name} {tags.map(tag => (<span className="font--comment">{tag}</span>))}
+    {name} {tags.map((tag, index) => (<span className="font--comment" key={index}>{tag}</span>))}
   </p>
 );
 

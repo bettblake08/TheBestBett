@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SlidingPage from "../../components/slidingPage/slidingPage";
 import GitHub from "./contacts/githubSection";
 import Facebook from "./contacts/facebookSection";
 import Twitter from "./contacts/twitterSection";
 import LinkedIn from "./contacts/linkedInSection";
 import ContactPageContext from "./contactPageContext";
+import { setPageTitle } from "../../utilities/helpers";
 
 import "./contactPage.scss";
 
@@ -12,6 +13,10 @@ const ContactPage = () => {
   const [store, setStore] = useState({ selectedContact: null });
 
   const setSelectedContact = selectedContact => setStore({ ...store, selectedContact });
+
+  useEffect(() => {
+    setPageTitle("Contact");
+  }, []);
 
   return (
     <ContactPageContext.Provider value={{ ...store, setSelectedContact }}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import mainSliderConfig from "../../utilities/mainPageSlider";
 import SlidingPage from "../../components/slidingPage/slidingPage";
 import LandingSection from "./landingSection";
@@ -8,6 +8,7 @@ import SkillsSection from "./skillsSection";
 import Background from "./background";
 
 import "./profilePage.scss";
+import { setPageTitle } from "../../utilities/helpers";
 
 export default () => {
   const [scrollY, setScrollY] = useState(0);
@@ -31,6 +32,10 @@ export default () => {
       layer.style.transform = translate3d;
     });
   };
+
+  useEffect(() => {
+    setPageTitle("Profile");
+  }, []);
 
   return (
     <SlidingPage
