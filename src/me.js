@@ -8,10 +8,10 @@ export default {
   },
   whoAmI: [
     "Software Engineer.",
-    "Entrepreneur.",
-    "Thinker.",
+    "Coder.",
     "Music Enthusiast.",
-    "Athlete."
+    "Athlete.",
+    "Perfectionist."
   ],
   projects: [
     {

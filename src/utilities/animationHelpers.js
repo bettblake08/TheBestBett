@@ -39,7 +39,7 @@ export const letterAnimation = (text, variants = {}) => {
 
   Array.from(text).forEach(letter => {
     if (letter === " ") {
-      result.push(<span style={style}> {generateWord(newWord, variants)} </span>);
+      result.push(<div style={style}> {generateWord(newWord, variants)} </div>);
       result.push(<span style={style}>&nbsp;</span>);
       newWord = [];
     } else {
@@ -48,7 +48,7 @@ export const letterAnimation = (text, variants = {}) => {
   })
 
   if (newWord.length > 0) {
-    result.push(<span style={style}> {generateWord(newWord, variants)} </span>);
+    result.push(<div style={style}> {generateWord(newWord, variants)} </div>);
   }
 
   return result;
