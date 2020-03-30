@@ -68,7 +68,7 @@ const TechStackSkillCard = () => (
     <SkillItem name="PHP" />
     <SkillItem name="Javascript" />
     <SkillItem name="Python" />
-    <SkillItem name="Scala" />
+    {/* <SkillItem name="Scala" /> */}
 
     <h2 className="font--header--2">Framework/Libraries</h2>
     <SkillItem name="Laravel" tags={["PHP"]} />
@@ -76,7 +76,7 @@ const TechStackSkillCard = () => (
     <SkillItem name="Yii" tags={["PHP"]} />
     <SkillItem name="Flask" tags={["Python"]} />
     <SkillItem name="Django" tags={["Python"]} />
-    <SkillItem name="Play" tags={["Scala"]} />
+    {/* <SkillItem name="Play" tags={["Scala"]} /> */}
   </SkillCard>
 );
 
