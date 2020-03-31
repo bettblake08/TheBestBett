@@ -1,0 +1,92 @@
+@import "../../../assets/scss/abstract/variables";
+@import "../../../assets/scss/abstract/mixins";
+
+.p-landing {
+  padding-top: 25vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 80%;
+  height: 100vh;
+  float: left;
+  margin-left: 10%;
+
+  @include respond(tab-port) {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  @include respond(phone) {
+    margin-left: 5%;
+    padding-top: 15vh;
+  }
+
+  &__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-areas:
+      "picture first-text"
+      "picture second-text"
+      "third-text third-text";
+
+    @include respond(phone) {
+      grid-template-areas:
+        "picture picture"
+        "first-text first-text"
+        "second-text second-text"
+        "third-text third-text";
+    }
+  }
+
+  &__greeting-image {
+    grid-area: picture;
+    width: 90%;
+    height: 90%;
+    margin: 0 2rem 2rem 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  img {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  span {
+    font-size: 10rem;
+    color: $color-grey-dark;
+    text-align: justify;
+    font-family: $font-primary;
+    font-weight: bold;
+
+    &:nth-child(2) {
+      grid-area: first-text;
+    }
+
+    &:nth-child(3) {
+      grid-area: second-text;
+    }
+
+    &:nth-child(4) {
+      grid-area: third-text;
+    }
+
+    @include respond(tab-port) {
+      font-size: 9rem;
+    }
+
+    @include respond(phone) {
+      font-size: 7rem;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    color: $color-primary-white;
+    margin: 0 0 0.5rem 0;
+  }
+}

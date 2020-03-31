@@ -1,0 +1,138 @@
+@import "../../../assets/scss/abstract/variables";
+@import "../../../assets/scss/abstract/mixins";
+
+$ju-primary: #017a39;
+
+.p-education {
+  position: relative;
+  width: 100%;
+  height: 45rem;
+  float: left;
+  overflow: hidden;
+
+  @include respond(phone) {
+    height: 50rem;
+  }
+
+  &__image {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    object-position: center;
+    object-fit: cover;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    img {
+      min-width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    background-image: url("../../../assets/images/circuit-board.svg");
+    background-color: $ju-primary;
+    position: absolute;
+    z-index: 30;
+    width: 70%;
+    height: 100%;
+    right: 0;
+
+    &__left {
+      width: 50%;
+      float: left;
+      min-height: 50vh;
+      margin-left: 25%;
+
+      @include respond(phone) {
+        margin-left: 10%;
+        width: 80%;
+      }
+
+      h4 {
+        color: $color-grey-light;
+        font-size: 2.5rem;
+        margin: 3rem 0 2rem 0;
+        grid-area: title;
+      }
+
+      h1 {
+        color: $color-primary-white;
+        font-size: 5rem;
+        line-height: 6rem;
+        margin: 0;
+        grid-area: age;
+        float: left;
+      }
+
+      h3 {
+        font-size: 3rem;
+        color: $color-grey-light;
+        float: left;
+        margin: 1rem 0;
+      }
+    }
+
+    &__button {
+      width: 25rem;
+      height: 5rem;
+      position: relative;
+      margin-top: 3rem;
+      float: left;
+
+      @include respond(phone) {
+        width: 30rem;
+      }
+
+      .button {
+        &--normal {
+          color: $color-primary-white;
+          border: solid 0.1rem $color-primary-white;
+          
+          &:hover,
+          &:hover .button__label{
+            color: $ju-primary;
+          }
+
+          &::before {
+            background-color: white;
+          }
+        }
+
+        &__label {
+          color: $color-primary-white;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 50;
+    top: 60rem;
+    width: 30rem;
+    height: 30rem;
+    padding: 5rem;
+    margin-left: 20%;
+    background-color: $color-primary-white;
+    box-shadow: $box-shadow-light;
+
+    @include respond(tab-port) {
+      width: 25rem;
+      height: 25rem;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

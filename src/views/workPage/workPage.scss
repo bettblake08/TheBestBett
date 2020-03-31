@@ -1,0 +1,161 @@
+@import "../../assets/scss/abstract/variables";
+@import "../../assets/scss/abstract/mixins";
+
+.work-page {
+  &,
+  &--collapsed {
+    background-color: white;
+  }
+
+  &--collapsed &__preview {
+    width: 8rem;
+    padding: 0;
+  }
+
+  &--collapsed .work-preview__details {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__preview {
+    background-color: $color-secondary;
+    width: 60%;
+    height: 100vh;
+    padding: 0;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    @include transition(0.5s ease-out all);
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &__back-btn {
+    position: absolute;
+    top: 10vh;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    color: $color-primary-white;
+    border: solid 1px $color-primary-white;
+    border-radius: 1rem;
+    opacity: 0.5;
+    z-index: 600;
+    @include transition-quick();
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__gallery {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 40%;
+    height: 100vh;
+    float: right;
+    position: relative;
+
+    @include respond(phone) {
+      width: 0;
+    }
+    &__view {
+      width: 100%;
+      padding: 10vh 0 5rem 10%;
+      float: left;
+      position: absolute;
+      z-index: 0;
+    }
+
+    &__fade {
+      width: 100%;
+      height: 15vh;
+      position: fixed;
+      z-index: 50;
+      background-image: linear-gradient(to top, #cccccc00, #ffffff 50%);
+    }
+  }
+
+  &--collapsed &__gallery {
+    width: calc(100% - 8rem);
+
+    &__view {
+      width: 100%;
+      padding: 10vh 0 5rem 5%;
+
+      @include respond(phone) {
+        padding: 10vh 0 5rem 10%;
+      }
+    }
+  }
+}
+
+.work-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+
+    img {
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  &__fade {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    background-image: linear-gradient(
+      to right,
+      $color-grey-dark-fade,
+      rgba(0, 0, 0, 0.3)
+    );
+  }
+
+  &__details {
+    z-index: 50;
+    position: absolute;
+    top: 30vh;
+    left: 5rem;
+    opacity: 1;
+    visibility: visible;
+    @include transition-quick;
+  }
+
+  &__title {
+    color: $color-primary-white;
+    margin: 3rem 0;
+  }
+
+  &__body {
+    color: $color-primary-white;
+    padding-right: 5rem;
+  }
+
+  &__button {
+    float: left;
+    width: 20rem;
+    height: 5rem;
+    position: relative;
+    margin-top: 3rem;
+    overflow: hidden;
+
+    @include respond(phone) {
+      width: 22rem;
+    }
+  }
+}

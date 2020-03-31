@@ -1,0 +1,42 @@
+.p-background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+
+    &__flags {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        float: left;
+    }
+
+    &__flag {
+        width: 30rem;
+        height: 20rem;
+        opacity: 0.1;
+        position: absolute;
+
+        img {
+            width: 20rem;
+            height: 15rem;
+        }
+
+        &.flag {
+            &--kenya {
+                top: 80%;
+                left: 10%;
+            }
+
+            &--china {
+                top: 90%;
+                left: 45%;
+            }
+
+            &--botswana {
+                top: 60%;
+                left: 80%;
+            }
+        }
+    }
+}

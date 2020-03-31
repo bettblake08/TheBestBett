@@ -1,0 +1,23 @@
+@import "../../assets/scss/abstract/variables";
+
+.profile-page {
+  float: left;
+  background-color: white;
+  overflow-y: scroll;
+  transform-style: preserve-3d;
+  perspective: 1px;
+
+  &__content {
+    float: left;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.cancer-icon {
+  mask: url("../../assets/icons/cancer.svg");
+}
+
+.rat-icon {
+  mask: url("../../assets/icons/rat.svg");
+}

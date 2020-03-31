@@ -1,0 +1,101 @@
+@import "../../assets/scss/abstract/variables";
+@import "../../assets/scss/abstract/mixins";
+
+.header {
+  position: absolute;
+  z-index: 500;
+  width: 100%;
+  height: 10vh;
+
+  &__content {
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    padding: 0 10% 0 2rem;
+  }
+
+  &__page-selector-toggle.hamburger {
+    float: left;
+    width: 3rem;
+    position: relative;
+    visibility: hidden;
+
+    @include respond(tab-port) {
+      visibility: visible;
+      width: 6rem;
+    }
+
+    padding: 1rem 0;
+
+    .hamburger-inner {
+      background-color: $color-primary-white !important;
+
+      &::before,
+      &::after {
+        background-color: inherit !important;
+      }
+
+      &.dark {
+        background-color: $color-secondary !important;
+      }
+    }
+  }
+
+  &__logo {
+    float: left;
+    width: auto;
+    height: 4rem;
+    @include transition-quick;
+
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    @include respond(tab-port) {
+      height: 4.5rem;
+      margin-left: 0.5rem;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__socials {
+    &,
+    &--dark {
+      float: right;
+      display: flex;
+      justify-content: space-between;
+      width: 25rem;
+
+      a {
+        width: 4rem;
+        height: 4rem;
+        line-height: 4rem;
+        text-align: center;
+        text-decoration: none;
+        color: $color-primary-white;
+        border-radius: 50%;
+        border: solid 1px transparent;
+        @include transition-quick;
+
+        &:hover {
+          color: $color-primary;
+          scale: 1.5;
+        }
+      }
+    }
+
+    &--dark {
+      a {
+        color: $color-primary;
+        &:hover {
+          scale: 1.5;
+        }
+      }
+    }
+  }
+}

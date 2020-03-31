@@ -1,0 +1,32 @@
+$font-primary: "Ubuntu", sans-serif;
+$font-secondary: "Open Sans", sans-serif;
+$color-primary: #0066ff;
+$color-secondary: #4388ef;
+$color-tertiary: #000c1e;
+$color-primary-white: #fff;
+$color-secondary-white: #ccc;
+$color-primary-black: #000;
+$color-grey-light: #ccc;
+$color-grey-fair: #999;
+$color-grey-dark: #171717;
+$color-grey-dark-fade: rgba(0, 0, 0, 0.4);
+$color-error-primary: #b33030;
+$color-error-secondary: rgba(216, 77, 71, 1);
+$color-success-primary: #00a84f;
+$color-success-secondary: #00fa75;
+$color-info: #8eb4cb;
+$color-warning-primary: #ffd900;
+$color-danger-primary: #b33030;
+$input-box-shadow: 0 0.1rem 0.3rem 0.1rem #ccc inset;
+$box-shadow-light-inset: 0 0.1rem 2rem -0.5rem $color-primary-black inset;
+$box-shadow-light: 0 0.1rem 4rem -0.5rem $color-grey-dark-fade;
+$box-shadow-dark: 0 0.1rem 4rem -0.5rem $color-primary-black;
+$box-shadow-theme-light: 0 0.1rem 2rem -0.5rem $color-secondary;
+$box-shadow-success: 0 0.1rem 2rem 0 $color-success-primary;
+$box-shadow-error: 0 0.1rem 2rem 0 $color-error-primary;
+$text-shadow-light: 0 0 2rem #000;
+$radial-gradient: radial-gradient(
+  circle at top,
+  $color-secondary,
+  $color-tertiary
+);

@@ -1,0 +1,131 @@
+@import "../../assets/scss/abstract/variables";
+@import "../../assets/scss/abstract/mixins";
+
+$p-button-name: ".p-button";
+
+.page-options {
+  position: fixed;
+  z-index: 999;
+  height: 100vh;
+  width: 15rem;
+  @include transition-quick();
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &--dark &__option #{$p-button-name}__icon {
+    color: $color-primary;
+    border: solid 0.1rem $color-primary;
+  }
+
+  &--dark &__option--selected #{$p-button-name}__icon {
+    color: $color-primary-white;
+  }
+
+  @include respond(tab-port) {
+    left: -15rem;
+  }
+
+  .page--selector-visible & {
+    left: 0;
+  }
+}
+
+#{$p-button-name} {
+  &,
+  &--selected {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    margin: 1.5rem 0;
+    @include transition-quick();
+
+    label {
+      color: $color-primary-white;
+      width: 100%;
+      height: 100%;
+      line-height: 5rem;
+      overflow: hidden;
+      position: absolute;
+      z-index: 49;
+      visibility: hidden;
+      padding-left: 6rem;
+      border-radius: 5rem 0 0 5rem;
+      @include transition-quick();
+    }
+
+    &:hover {
+      label {
+        display: block;
+        width: 20rem;
+        background-color: $color-grey-dark-fade;
+        padding-left: 7rem;
+        visibility: visible;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 8rem;
+      height: 8rem;
+      margin: 2rem 0;
+
+      label,
+      &:hover label {
+        display: none;
+      }
+
+      &:hover label {
+        padding-left: 12rem;
+        padding-right: 5rem;
+        width: 25rem;
+      }
+    }
+  }
+
+  &__circle {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 48;
+    opacity: 0;
+
+    &--outer {
+      stroke: $color-primary;
+      stroke-dasharray: 15 10;
+      stroke-dashoffset: 300;
+    }
+    &--inner {
+      stroke: $color-secondary;
+      stroke-dasharray: 5 2;
+      stroke-dashoffset: 300;
+    }
+  }
+
+  &__icon {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border: solid 0.1rem $color-primary-white;
+    position: absolute;
+    z-index: 50;
+    @include transition-quick();
+
+    i {
+      color: $color-primary-white;
+    }
+  }
+
+  &:hover &__icon,
+  &--selected &__icon {
+    background-color: $color-secondary;
+    color: $color-primary-white;
+    border: solid 0.1rem $color-secondary;
+  }
+
+  &:hover &__circle {
+    opacity: 1;
+  }
+}

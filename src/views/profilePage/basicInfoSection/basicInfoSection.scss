@@ -1,0 +1,73 @@
+@import "../../../assets/scss/abstract/variables";
+@import "../../../assets/scss/abstract/mixins";
+
+.p-basic {
+    padding: 10rem 20%;
+    width: 100%;
+    float: left;
+    display: grid;
+    grid-template-columns: 35% 15% 50%;
+    grid-template-areas:
+      "age . nationality"
+      "age . exp"
+      ". . signs";
+    background-color: $color-secondary;
+
+    @include respond(phone) {
+      padding: 10rem 10%;
+    }
+
+    &__age {
+      grid-area: age;
+    }
+
+    &__age,
+    &__detail {
+      h4 {
+        color: $color-grey-light;
+        font-size: 2.5rem;
+        margin: 0 0 2rem 0;
+        grid-area: title;
+      }
+    }
+
+    &__age {
+      h1 {
+        color: $color-primary-white;
+        font-size: 17rem;
+        line-height: 14rem;
+        margin: 0;
+        grid-area: age;
+        float: left;
+      }
+
+      span {
+        font-size: 4rem;
+        color: $color-grey-light;
+        float: left;
+        margin-top: 10rem;
+      }
+    }
+
+    &__detail {
+      h1 {
+        color: $color-primary-white;
+        font-size: 4rem;
+        margin: 0 0 4rem 0;
+        grid-area: value;
+      }
+    }
+
+    &__signs {
+      grid-area: value;
+
+      span {
+        margin-right: 3rem;
+        float: left;
+        width: 5rem;
+        height: 5rem;
+        background: $color-primary-white;
+        mask-size: cover;
+      }
+    }
+  }
