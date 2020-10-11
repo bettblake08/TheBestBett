@@ -92,12 +92,12 @@ $p-button-name: ".p-button";
     z-index: 48;
     opacity: 0;
 
-    &--outer {
+    &--inner {
       stroke: $color-primary;
       stroke-dasharray: 15 10;
       stroke-dashoffset: 300;
     }
-    &--inner {
+    &--outer {
       stroke: $color-secondary;
       stroke-dasharray: 5 2;
       stroke-dashoffset: 300;

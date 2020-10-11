@@ -58,14 +58,14 @@ const rotateLoop = {
 
 const innerRingVariant = {
   hover: {
-    scale: 1.8,
+    scale: 1.4,
     ...rotateLoop
   }
 };
 
 const outerRingVariant = {
   hover: {
-    scale: 1.4,
+    scale: 1.8,
     ...rotateLoop
   }
 };
@@ -87,7 +87,6 @@ const PageOption = ({ label, icon, url }) => {
     >
       <Link to={url} onClick={linkOnClick}>
         <motion.svg
-          whileHover="hover"
           variants={innerRingVariant}
           className="p-button__circle"
         >
@@ -101,7 +100,6 @@ const PageOption = ({ label, icon, url }) => {
           />
         </motion.svg>
         <motion.svg
-          whileHover="hover"
           variants={outerRingVariant}
           className="p-button__circle"
         >
