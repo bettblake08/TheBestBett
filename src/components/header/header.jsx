@@ -32,20 +32,9 @@ const headerStyleConfig = {
   }
 };
 
-const socialIconVariants = {
-  hover: {
-    scale: 1.5,
-    transition: {
-      duration: 0.1
-    }
-  }
-};
-
 const SocialLink = ({ icon, url = "" }) => (
   // eslint-disable-next-line jsx-a11y/anchor-has-content
-  <motion.a
-    variants={socialIconVariants}
-    whileHover="hover"
+  <a
     href={url}
     className={`fab fa-${icon} fa-2x`}
     target="_blank"

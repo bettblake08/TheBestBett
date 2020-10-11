@@ -83,16 +83,7 @@
 
         &:hover {
           color: $color-primary;
-          scale: 1.5;
-        }
-      }
-    }
-
-    &--dark {
-      a {
-        color: $color-primary;
-        &:hover {
-          scale: 1.5;
+          transform: scale(1.5);
         }
       }
     }
