@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import mainSliderConfig from "utils/mainPageSlider";
+
 import SlidingPage from "components/slidingPage";
+import mainSliderConfig from "utils/mainPageSlider";
+import { setPageTitle } from "utils/helpers";
+
 import LandingSection from "./landingSection";
 import BasicInfoSection from "./basicInfoSection";
 import EducationSection from "./educationSection";
@@ -8,9 +11,8 @@ import SkillsSection from "./skillsSection";
 import Background from "./background";
 
 import "./profilePage.scss";
-import { setPageTitle } from "utils/helpers";
 
-export default () => {
+const ProfilePage = () => {
   const [scrollY, setScrollY] = useState(0);
 
   const onScroll = e => {
@@ -53,3 +55,5 @@ export default () => {
     </SlidingPage>
   );
 };
+
+export default ProfilePage;

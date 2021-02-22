@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import Typed from "typed.js";
 
+import ProPicture from "assets/images/pro-picture.png";
 import SlidingPage from "components/slidingPage";
 import Button from "components/button";
 import { letterAnimation } from "utils/animationHelpers";
@@ -10,7 +11,6 @@ import { setPageTitle } from "utils/helpers";
 import GlobalVariants from "utils/globalVariants";
 import me from "me";
 
-import ProPicture from "assets/images/pro-picture.png";
 import "./landingPage.scss";
 
 const variants = {
@@ -48,7 +48,7 @@ const slideInFromLeft = {
   "page-out": GlobalVariants.slideInFromLeft.exit
 };
 
-export default () => {
+const LandingPage = () => {
   const history = useHistory();
   const [typeRef, setTypeRef] = useState(null);
   const [components, setComponents] = useState({})
@@ -114,3 +114,5 @@ export default () => {
     </SlidingPage>
   );
 };
+
+export default LandingPage;

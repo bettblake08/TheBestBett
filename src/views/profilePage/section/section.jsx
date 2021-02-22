@@ -38,7 +38,7 @@ const sectionHeaderVariants = {
   }
 };
 
-export default ({ scrollY, children, className, sectionTitle }) => {
+const Section = ({ scrollY, children, className, sectionTitle }) => {
   const [previouslyInView, setPreviouslyInView] = useState(false);
   const [sectionRef] = useState(createRef());
   const sectionAnimationControl = useAnimation();
@@ -66,3 +66,5 @@ export default ({ scrollY, children, className, sectionTitle }) => {
     </div>
   );
 };
+
+export default Section;

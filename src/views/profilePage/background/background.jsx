@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import KE from "assets/images/ke.svg";
 import CN from "assets/images/china.svg";
 import BW from "assets/images/botswana.svg";
+
 import "./background.scss";
 
 const BackgroundFlags = ({ style }) => (
@@ -25,4 +26,5 @@ const Background = () => (
     <BackgroundFlags style={{ marginTop: "-20rem" }}/>
   </div>
 );
+
 export default Background;

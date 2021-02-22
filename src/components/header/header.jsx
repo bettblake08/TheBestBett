@@ -2,10 +2,9 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
 import AppContext from "app/context";
-import Profile from "me";
-
 import Logo from "assets/images/thebestbett-1.png";
 import LogoDark from "assets/images/thebestbett-black-1.png";
+import Profile from "me";
 
 import "./header.scss";
 

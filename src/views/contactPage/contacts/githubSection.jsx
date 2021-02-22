@@ -2,8 +2,10 @@ import Profile from "me";
 
 import ContactSection from "../contactSection";
 
-export default ({ index }) => {
+const GithubSection = ({ index }) => {
   return (
     <ContactSection {...Profile.socials.github} index={index} /> 
   );
 };
+
+export default GithubSection;

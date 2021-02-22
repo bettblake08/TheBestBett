@@ -1,7 +1,7 @@
 import image from "assets/images/landing-page.jpg";
 import neoUiImage from "assets/images/neo-ui.png";
 
-export default {
+const Profile = {
   name: {
     normal: "Brian Kipkirui Bett",
     caps: "BRIAN KIPKIRUI BETT"
@@ -63,3 +63,5 @@ export default {
     }
   }
 };
+
+export default Profile;

@@ -125,7 +125,7 @@ const SoftSkillCard = () => (
   </SkillCard>
 );
 
-const SkillsSection = ({ sectionAnimationControl }) => {
+const SkillsSectionContent = ({ sectionAnimationControl }) => {
   const [openCard, setOpenCard] = useState("");
 
   return (
@@ -139,14 +139,16 @@ const SkillsSection = ({ sectionAnimationControl }) => {
       </div>
     </SkillsSectionContext.Provider>
   );
-}
+};
 
-export default ({ scrollY }) => (
+const SkillsSection = ({ scrollY }) => (
   <Section
     className="p-skills"
     scrollY={scrollY}
     sectionTitle="Technical and Soft Skills"
   >
-    <SkillsSection />
+    <SkillsSectionContent />
   </Section>
 );
+
+export default SkillsSection;

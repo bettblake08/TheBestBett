@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 import AppContext from "app/context";
@@ -67,7 +67,7 @@ const WorkPreview = ({ work, controls }) => {
   );
 };
 
-export default () => {
+const WorkPage = () => {
   const [isGalleryExpanded, setIsGalleryExpanded] = useState(!isScreenMobile());
   const [scrollY, setScrollY] = useState(0);
   const controls = useAnimation();
@@ -120,3 +120,5 @@ export default () => {
     </SlidingPage>
   );
 };
+
+export default WorkPage;

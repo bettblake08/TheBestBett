@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+import JULogo from "assets/images/Jiangsu_University_logo.png";
+import JUImage from "assets/images/ju.jpg";
 import Button from "components/button";
 import GlobalVariants from "utils/globalVariants";
 import me from "me";
@@ -8,13 +10,11 @@ import me from "me";
 import { getSectionVariants } from "../helper";
 import Section from "../section";
 
-import JULogo from "assets/images/Jiangsu_University_logo.png";
-import JUImage from "assets/images/ju.jpg";
 import "./educationSection.scss";
 
 const slideInFromRight = getSectionVariants(GlobalVariants.slideInFromRight);
 
-const EducationSection = ({ sectionAnimationControl  }) => {
+const EducationSectionContent = ({ sectionAnimationControl }) => {
   const [components, setComponents] = useState({});
   return (
     <>
@@ -39,7 +39,8 @@ const EducationSection = ({ sectionAnimationControl  }) => {
               config={{
                 icon: "arrow-right",
                 label: "Visit the homepage",
-                action: () => window.open(me.education.bachelors.homepage, '_blank')
+                action: () =>
+                  window.open(me.education.bachelors.homepage, "_blank"),
               }}
             />
           </div>
@@ -52,12 +53,14 @@ const EducationSection = ({ sectionAnimationControl  }) => {
   );
 };
 
-export default props => (
+const EducationSection = props => (
   <Section
     className="p-education"
     scrollY={props.scrollY}
     sectionTitle="Education"
   >
-    <EducationSection />
+    <EducationSectionContent />
   </Section>
 );
+
+export default EducationSection;

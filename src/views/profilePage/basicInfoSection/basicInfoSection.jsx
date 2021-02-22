@@ -25,7 +25,7 @@ const stagger = {
   delayChildren: 0.3
 };
 
-const BasicInfoSection = ({ sectionAnimationControl  }) => (
+const BasicInfoSectionContent = ({ sectionAnimationControl  }) => (
   <>
     <motion.div className="p-basic__age" transition={stagger}>
       <motion.h4
@@ -109,8 +109,14 @@ const BasicInfoSection = ({ sectionAnimationControl  }) => (
   </>
 );
 
-export default ({ scrollY }) => (
-  <Section className={sectionName} scrollY={scrollY} sectionTitle="Basic Information">
-    <BasicInfoSection />
+const BasicInfoSection = ({ scrollY }) => (
+  <Section
+    className={sectionName}
+    scrollY={scrollY}
+    sectionTitle="Basic Information"
+  >
+    <BasicInfoSectionContent />
   </Section>
 );
+
+export default BasicInfoSection;
