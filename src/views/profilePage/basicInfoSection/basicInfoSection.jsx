@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+
+import GlobalVariants from "utils/globalVariants";
+
 import Section from "../section";
-import GlobalVariants from "../../../utilities/globalVariants";
 import { getSectionVariants } from "../helper";
 
 import "./basicInfoSection.scss";

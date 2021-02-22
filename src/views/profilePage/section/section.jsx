@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useAnimation, motion } from "framer-motion";
+
+import { letterAnimation } from "utils/animationHelpers";
+
 import { isSectionInView } from "../helper";
-import { letterAnimation } from "../../../utilities/animationHelpers";
 import { letterVariants } from "../variants";
+
 import "./section.scss";
 
 const sectionLetterVariants = {

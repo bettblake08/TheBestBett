@@ -1,16 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+
+import AppContext from "app/context";
+import Button from "components/button";
+import SlidingPage from "components/slidingPage";
+import GlobalVariants from "utils/globalVariants";
+import { isScreenMobile, setPageTitle } from "utils/helpers";
+import profile from "me";
+
 import WorkCollection from "./collection";
 import WorkPageContext from "./workPageContext";
-import SlidingPage from "../../components/slidingPage/slidingPage";
-import profile from "../../me";
-import AppContext from "../../app/context";
-import GlobalVariants from "../../utilities/globalVariants";
-import Button from "../../components/button";
-import { isScreenMobile, setPageTitle } from "../../utilities/helpers";
 
 import "./workPage.scss";
-import { useEffect } from "react";
 
 const variants = {
   "page-initial": GlobalVariants.slideInFromLeft.initial,

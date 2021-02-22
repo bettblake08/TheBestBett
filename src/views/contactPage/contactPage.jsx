@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import SlidingPage from "../../components/slidingPage/slidingPage";
+
+import SlidingPage from "components/slidingPage";
+import { setPageTitle } from "utils/helpers";
+
 import GitHub from "./contacts/githubSection";
 import Facebook from "./contacts/facebookSection";
 import Twitter from "./contacts/twitterSection";
 import LinkedIn from "./contacts/linkedInSection";
 import ContactPageContext from "./contactPageContext";
-import { setPageTitle } from "../../utilities/helpers";
 
 import "./contactPage.scss";
 

@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import Typed from "typed.js";
-import SlidingPage from "../../components/slidingPage/slidingPage";
-import { letterAnimation } from "../../utilities/animationHelpers";
-import { setPageTitle } from "../../utilities/helpers";
-import GlobalVariants from "../../utilities/globalVariants";
-import Button from "../../components/button";
-import me from "../../me";
 
-import ProPicture from "../../assets/images/pro-picture.png";
+import SlidingPage from "components/slidingPage";
+import Button from "components/button";
+import { letterAnimation } from "utils/animationHelpers";
+import { setPageTitle } from "utils/helpers";
+import GlobalVariants from "utils/globalVariants";
+import me from "me";
+
+import ProPicture from "assets/images/pro-picture.png";
 import "./landingPage.scss";
 
 const variants = {

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Section from "../section";
-import Button from "../../../components/button";
-import GlobalVariants from "../../../utilities/globalVariants";
-import { getSectionVariants } from "../helper";
-import me from "../../../me";
 
-import JULogo from "../../../assets/images/Jiangsu_University_logo.png";
-import JUImage from "../../../assets/images/ju.jpg";
+import Button from "components/button";
+import GlobalVariants from "utils/globalVariants";
+import me from "me";
+
+import { getSectionVariants } from "../helper";
+import Section from "../section";
+
+import JULogo from "assets/images/Jiangsu_University_logo.png";
+import JUImage from "assets/images/ju.jpg";
 import "./educationSection.scss";
 
 const slideInFromRight = getSectionVariants(GlobalVariants.slideInFromRight);

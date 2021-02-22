@@ -1,4 +1,4 @@
-import globalVariants from "../../../utilities/globalVariants";
+import globalVariants from "utils/globalVariants";
 
 const variants = {
   collection: {

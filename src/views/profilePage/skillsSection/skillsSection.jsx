@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Section from "../section";
-import GlobalVariants from "../../../utilities/globalVariants";
+
+import GlobalVariants from "utils/globalVariants";
+import { isScreenMobile } from "utils/helpers";
+
 import { getSectionVariants } from "../helper";
-import { isScreenMobile } from "../../../utilities/helpers";
+import Section from "../section";
 
 import "./skillsSection.scss";
 

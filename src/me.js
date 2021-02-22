@@ -1,5 +1,5 @@
-import image from "./assets/images/landing-page.jpg";
-import neoUiImage from "./assets/images/neo-ui.png";
+import image from "assets/images/landing-page.jpg";
+import neoUiImage from "assets/images/neo-ui.png";
 
 export default {
   name: {

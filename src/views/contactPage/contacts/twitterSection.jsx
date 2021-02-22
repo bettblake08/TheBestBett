@@ -1,11 +1,12 @@
 import React from "react";
+
+import Profile from "me";
+
 import ContactSection from "../contactSection";
-import Profile from "../../../me";
 
 const GithubSection = ({ index }) => {
   return (
-    <ContactSection {...Profile.socials.twitter} index={index}>
-    </ContactSection>
+    <ContactSection {...Profile.socials.twitter} index={index} />
   );
 };
 

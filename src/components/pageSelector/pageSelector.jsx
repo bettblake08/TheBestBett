@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import AppContext from "../../app/context";
+import AppContext from "app/context";
 import "./pageSelector.scss";
-import { isScreenMobile } from "../../utilities/helpers";
+import { isScreenMobile } from "utils/helpers";
 
 const darkConfig = {
   "/": false,

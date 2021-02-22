@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
+import Button from "components/button";
+
 import contactPageContext from "./contactPageContext";
-import Button from "../../components/button";
 
 const ringVariants = {
   "rotate-loop": {
