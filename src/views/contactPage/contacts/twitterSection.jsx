@@ -1,5 +1,3 @@
-import React from "react";
-
 import Profile from "me";
 
 import ContactSection from "../contactSection";

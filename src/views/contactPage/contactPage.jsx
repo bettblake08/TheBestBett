@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import SlidingPage from "components/slidingPage";
 import { setPageTitle } from "utils/helpers";

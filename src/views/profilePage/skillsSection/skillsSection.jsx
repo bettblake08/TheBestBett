@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { createContext, useState } from "react";
 import { motion } from "framer-motion";
 
 import GlobalVariants from "utils/globalVariants";
@@ -9,7 +9,7 @@ import Section from "../section";
 
 import "./skillsSection.scss";
 
-const SkillsSectionContext = React.createContext({});
+const SkillsSectionContext = createContext({});
 
 const slideInFromRight = getSectionVariants(GlobalVariants.slideInFromRight);
 const slideInFromLeft = getSectionVariants(GlobalVariants.slideInFromLeft);

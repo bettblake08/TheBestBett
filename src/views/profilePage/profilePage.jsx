@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import mainSliderConfig from "utils/mainPageSlider";
 import SlidingPage from "components/slidingPage";
 import LandingSection from "./landingSection";

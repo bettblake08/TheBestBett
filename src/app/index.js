@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,12 +6,15 @@ import {
   useLocation
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+
+import PageSelector from "components/pageSelector";
+import LandingPage from "views/landingPage";
+import ProfilePage from "views/profilePage";
+import WorkPage from "views/workPage";
+import ContactPage from "views/contactPage";
+
 import AppContext from "./context";
-import PageSelector from "../components/pageSelector";
-import LandingPage from "../views/landingPage";
-import ProfilePage from "../views/profilePage";
-import WorkPage from "../views/workPage";
-import ContactPage from "../views/contactPage";
+
 
 const storeDefault = {
   header: {
@@ -26,7 +29,7 @@ const Pages = () => {
   const location = useLocation();
 
   return (
-    <React.Fragment>
+    <>
       <PageSelector />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
@@ -36,11 +39,11 @@ const Pages = () => {
           <Route exact path="/contact" component={ContactPage} />
         </Switch>
       </AnimatePresence>
-    </React.Fragment>
+    </>
   );
 };
 
-export default () => {
+const App = () => {
   const [store, setStore] = useState(storeDefault);
 
   return (
@@ -74,3 +77,5 @@ export default () => {
     </div>
   );
 };
+
+export default App;

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import AppContext from "app/context";

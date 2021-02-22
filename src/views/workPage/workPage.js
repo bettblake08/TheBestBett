@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 import AppContext from "app/context";
