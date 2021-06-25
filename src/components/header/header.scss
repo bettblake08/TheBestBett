@@ -86,6 +86,10 @@
           transform: scale(1.5);
         }
       }
+
+      @include respond(phone) {
+        width: 25rem;
+      }
     }
   }
 }
