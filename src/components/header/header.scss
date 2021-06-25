@@ -20,13 +20,12 @@
     width: 3rem;
     position: relative;
     visibility: hidden;
+    padding: 1rem 0;
 
     @include respond(tab-port) {
       visibility: visible;
       width: 6rem;
     }
-
-    padding: 1rem 0;
 
     .hamburger-inner {
       background-color: $color-primary-white !important;
