@@ -1,4 +1,4 @@
-import { getPageOffset } from "../../utilities/animationHelpers";
+import { getPageOffset } from "utils/animationHelpers";
 
 const minWindowOffset = (window.innerHeight * 2) / 3;
 

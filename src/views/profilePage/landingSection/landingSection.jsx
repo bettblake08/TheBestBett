@@ -1,16 +1,18 @@
-import React from "react";
 import { motion } from "framer-motion";
+
+import Pic1 from "assets/images/IMG_20190804_182536_759.jpg";
+import { letterAnimation } from "utils/animationHelpers";
+
 import {
   textSlideInUpVariants,
   textSlideInLeftVariants,
   letterVariants,
   imageVariants
 } from "../variants";
-import { letterAnimation } from "../../../utilities/animationHelpers";
-import Pic1 from "../../../assets/images/IMG_20190804_182536_759.jpg";
+
 import "./landingSection.scss";
 
-export default () => (
+const LandingSection = () => (
   <div className="p-landing" data-type="parallax" data-depth="1">
     <div className="p-landing__content">
       <motion.div
@@ -32,3 +34,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default LandingSection;

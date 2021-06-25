@@ -1,8 +1,9 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import '@fortawesome/fontawesome-free/css/all.css';
-import App from './app';
-import "./assets/scss/index.scss";
+
+import App from 'app';
+
+import "@fortawesome/fontawesome-free/css/all.css";
+import "assets/scss/index.scss";
 
 import * as serviceWorker from './serviceWorker';
 

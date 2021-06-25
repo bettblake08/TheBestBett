@@ -1,5 +1,5 @@
-@import "../../assets/scss/abstract/variables";
-@import "../../assets/scss/abstract/mixins";
+@import "assets/scss/abstract/variables";
+@import "assets/scss/abstract/mixins";
 
 .work-page {
   &,
@@ -38,7 +38,7 @@
     right: 2rem;
     width: 4rem;
     height: 4rem;
-    line-height: 4rem;
+    line-height: 4rem !important;
     text-align: center;
     color: $color-primary-white;
     border: solid 1px $color-primary-white;
@@ -63,6 +63,7 @@
     @include respond(phone) {
       width: 0;
     }
+
     &__view {
       width: 100%;
       padding: 10vh 0 5rem 10%;

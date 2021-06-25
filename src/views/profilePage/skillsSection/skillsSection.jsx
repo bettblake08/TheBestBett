@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import { createContext, useState } from "react";
 import { motion } from "framer-motion";
-import Section from "../section";
-import GlobalVariants from "../../../utilities/globalVariants";
+
+import GlobalVariants from "utils/globalVariants";
+import { isScreenMobile } from "utils/helpers";
+
 import { getSectionVariants } from "../helper";
-import { isScreenMobile } from "../../../utilities/helpers";
+import Section from "../section";
 
 import "./skillsSection.scss";
 
-const SkillsSectionContext = React.createContext({});
+const SkillsSectionContext = createContext({});
 
 const slideInFromRight = getSectionVariants(GlobalVariants.slideInFromRight);
 const slideInFromLeft = getSectionVariants(GlobalVariants.slideInFromLeft);
@@ -123,7 +125,7 @@ const SoftSkillCard = () => (
   </SkillCard>
 );
 
-const SkillsSection = ({ sectionAnimationControl }) => {
+const SkillsSectionContent = ({ sectionAnimationControl }) => {
   const [openCard, setOpenCard] = useState("");
 
   return (
@@ -137,14 +139,16 @@ const SkillsSection = ({ sectionAnimationControl }) => {
       </div>
     </SkillsSectionContext.Provider>
   );
-}
+};
 
-export default ({ scrollY }) => (
+const SkillsSection = ({ scrollY }) => (
   <Section
     className="p-skills"
     scrollY={scrollY}
     sectionTitle="Technical and Soft Skills"
   >
-    <SkillsSection />
+    <SkillsSectionContent />
   </Section>
 );
+
+export default SkillsSection;

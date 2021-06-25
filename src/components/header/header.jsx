@@ -1,11 +1,10 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import AppContext from "../../app/context";
 
-import Profile from "../../me";
-import Logo from "../../assets/images/thebestbett-1.png";
-import LogoDark from "../../assets/images/thebestbett-black-1.png";
+import AppContext from "app/context";
+import Logo from "assets/images/thebestbett-1.png";
+import LogoDark from "assets/images/thebestbett-black-1.png";
+import Profile from "me";
 
 import "./header.scss";
 
@@ -32,22 +31,11 @@ const headerStyleConfig = {
   }
 };
 
-const socialIconVariants = {
-  hover: {
-    scale: 1.5,
-    transition: {
-      duration: 0.1
-    }
-  }
-};
-
 const SocialLink = ({ icon, url = "" }) => (
   // eslint-disable-next-line jsx-a11y/anchor-has-content
-  <motion.a
-    variants={socialIconVariants}
-    whileHover="hover"
+  <a
     href={url}
-    className={`fab fa-${icon} fa-2x`}
+    className={`fab fa-${icon} fa-3x`}
     target="_blank"
     rel="noreferrer noopener"
   />

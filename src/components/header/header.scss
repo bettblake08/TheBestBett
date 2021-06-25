@@ -20,13 +20,12 @@
     width: 3rem;
     position: relative;
     visibility: hidden;
+    padding: 1rem 0;
 
     @include respond(tab-port) {
       visibility: visible;
       width: 6rem;
     }
-
-    padding: 1rem 0;
 
     .hamburger-inner {
       background-color: $color-primary-white !important;
@@ -69,7 +68,7 @@
       float: right;
       display: flex;
       justify-content: space-between;
-      width: 25rem;
+      width: 30rem;
 
       a {
         width: 4rem;
@@ -84,17 +83,12 @@
 
         &:hover {
           color: $color-primary;
-          scale: 1.5;
+          transform: scale(1.5);
         }
       }
-    }
 
-    &--dark {
-      a {
-        color: $color-primary;
-        &:hover {
-          scale: 1.5;
-        }
+      @include respond(phone) {
+        width: 25rem;
       }
     }
   }

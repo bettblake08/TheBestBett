@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { motion } from "framer-motion";
+
 import workPageContext from "../workPageContext";
 import variants from "./variants";
 

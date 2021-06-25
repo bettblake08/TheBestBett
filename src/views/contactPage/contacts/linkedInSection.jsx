@@ -1,12 +1,11 @@
-import React from "react";
-import ContactSection from "../contactSection";
-import Profile from "../../../me";
+import Profile from "me";
 
-const GithubSection = ({ index }) => {
+import ContactSection from "../contactSection";
+
+const LinkedInSection = ({ index }) => {
   return (
-    <ContactSection {...Profile.socials.linkedin} index={index}>
-    </ContactSection>
+    <ContactSection {...Profile.socials.linkedin} index={index} />
   );
 };
 
-export default GithubSection;
+export default LinkedInSection;

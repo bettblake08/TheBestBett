@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useState, createRef, cloneElement } from "react";
 import { useAnimation, motion } from "framer-motion";
+
+import { letterAnimation } from "utils/animationHelpers";
+
 import { isSectionInView } from "../helper";
-import { letterAnimation } from "../../../utilities/animationHelpers";
 import { letterVariants } from "../variants";
+
 import "./section.scss";
 
 const sectionLetterVariants = {
@@ -35,9 +38,9 @@ const sectionHeaderVariants = {
   }
 };
 
-export default ({ scrollY, children, className, sectionTitle }) => {
+const Section = ({ scrollY, children, className, sectionTitle }) => {
   const [previouslyInView, setPreviouslyInView] = useState(false);
-  const [sectionRef] = useState(React.createRef());
+  const [sectionRef] = useState(createRef());
   const sectionAnimationControl = useAnimation();
   const inView = isSectionInView(sectionRef.current, scrollY);
 
@@ -58,8 +61,10 @@ export default ({ scrollY, children, className, sectionTitle }) => {
         </motion.h1>
       </div>
       <div className={className} ref={sectionRef}>
-        {React.cloneElement(children, { scrollY, sectionAnimationControl })}
+        {cloneElement(children, { scrollY, sectionAnimationControl })}
       </div>
     </div>
   );
 };
+
+export default Section;

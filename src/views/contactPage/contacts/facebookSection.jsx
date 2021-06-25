@@ -1,10 +1,11 @@
-import React from "react";
-import ContactSection from "../contactSection";
-import Profile from "../../../me";
+import Profile from "me";
 
-export default ({ index }) => {
+import ContactSection from "../contactSection";
+
+const FacebookSection = ({ index }) => {
   return (
-    <ContactSection {...Profile.socials.facebook} index={index}>
-    </ContactSection>
+    <ContactSection {...Profile.socials.facebook} index={index} />
   );
 };
+
+export default FacebookSection;
