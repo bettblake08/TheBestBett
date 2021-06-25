@@ -11,7 +11,6 @@ const Profile = {
     "Coder.",
     "Music Enthusiast.",
     "Athlete.",
-    "Perfectionist."
   ],
   projects: [
     {
