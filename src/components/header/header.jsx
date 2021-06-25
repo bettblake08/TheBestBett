@@ -35,7 +35,7 @@ const SocialLink = ({ icon, url = "" }) => (
   // eslint-disable-next-line jsx-a11y/anchor-has-content
   <a
     href={url}
-    className={`fab fa-${icon} fa-2x`}
+    className={`fab fa-${icon} fa-3x`}
     target="_blank"
     rel="noreferrer noopener"
   />
