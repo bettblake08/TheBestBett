@@ -5,9 +5,6 @@
   "homepage": "https://thebestbett.netlify.com",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "framer-motion": "^1.7.2",
     "node-sass": "^4.13.1",
     "react": "17.0.1",
